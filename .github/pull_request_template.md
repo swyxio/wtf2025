@@ -1,13 +1,12 @@
-## New Chart Submission
+## New Submission
 
-**Image filename:** <!-- e.g. my-chart.png -->
+(optional) paste image for easy viewing in github
 
-**Source URL:** <!-- Link to the original source (article, tweet, report, etc.) -->
-
-**Short description:** <!-- One-liner: what does this chart show? -->
+**Why is this interesting:** <!-- One-liner: what does this chart show? -->
 
 ## Checklist
 
+- [ ] Submission is from a notable, reputable source, not a personal plug, or I will be banned from contributing
 - [ ] Image added to `public/images/`
-- [ ] Entry added to `src/pages/index.astro` with `data-src`, `data-href`, and `data-alt` attributes
+- [ ] Entry added to `src/pages/index.astro` frontmatter
 - [ ] Source URL is publicly accessible
