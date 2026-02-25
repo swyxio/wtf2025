@@ -78,7 +78,7 @@ const charts = [
 
 			header {
 				text-align: center;
-				padding: 80px 20px 60px;
+				padding: 40px 20px 60px;
 			}
 
 			header h1 {
@@ -96,9 +96,21 @@ const charts = [
 			.subtitle {
 				font-size: clamp(1.1rem, 2vw, 1.4rem);
 				color: #888;
-				max-width: 600px;
+				max-width: 800px;
 				margin: 0 auto;
 				line-height: 1.5;
+			}
+
+			.subtitle a {
+				color: #ccc;
+				text-decoration: none;
+				border-bottom: 1px solid rgba(204, 204, 204, 0.3);
+				transition: color 0.3s ease, border-color 0.3s ease;
+			}
+
+			.subtitle a:hover {
+				color: #fff;
+				border-color: #fff;
 			}
 
 			.charts {
@@ -175,7 +187,7 @@ const charts = [
 	<body>
 		<header>
 			<h1>WTF Happened in 2025?</h1>
-			<p class="subtitle">A curated collection of charts, screenshots, and visualizations documenting the wild developments in AI and tech throughout 2025.</p>
+			<p class="subtitle">A collection of datapoints in or around 2025 which we may look back as a historical inflection point. Open source & curated in realtime by <a href="https://latent.space" target="_blank" rel="noopener noreferrer">Latent Space</a>.</p>
 		</header>
 
 		<main class="charts">
