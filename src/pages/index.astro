@@ -141,10 +141,16 @@
 				padding: 24px 16px;
 			}
 
+			.lightbox-image-frame {
+				max-height: 90vh;
+				max-width: 90vw;
+				overflow: auto;
+			}
+
 			.lightbox-body img {
-				height: 90vh;
+				height: auto;
 				width: auto;
-				max-width: none;
+				max-width: 90vw;
 				flex: 0 0 auto;
 				align-self: flex-start;
 				display: block;
@@ -190,7 +196,9 @@
 				<button class="lightbox-close" id="lightbox-close">✕ Close</button>
 			</div>
 			<div class="lightbox-body">
-				<img id="lightbox-img" src="" alt="" />
+				<div class="lightbox-image-frame">
+					<img id="lightbox-img" src="" alt="" />
+				</div>
 			</div>
 		</div>
 
