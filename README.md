@@ -1,10 +1,8 @@
-# Astro Starter Kit: Minimal
+# WTF Happened in 2025?
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Live at **[https://wtfhappened2025.com/](https://wtfhappened2025.com/)**
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+A curated collection of charts, screenshots, and visualizations documenting the wild developments in AI and tech throughout 2025.
 
 ## 🚀 Project Structure
 
