@@ -9,9 +9,228 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>WTF Happened in 2025?</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				background-color: #000;
+				color: #fff;
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+				min-height: 100vh;
+			}
+
+			header {
+				text-align: center;
+				padding: 60px 20px 40px;
+			}
+
+			header h1 {
+				font-size: clamp(2.5rem, 6vw, 4.5rem);
+				font-weight: 900;
+				letter-spacing: -0.02em;
+				line-height: 1.1;
+			}
+
+			.charts {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 40px;
+				padding: 20px 20px 80px;
+				max-width: 900px;
+				margin: 0 auto;
+			}
+
+			.charts img {
+				width: 100%;
+				height: auto;
+				display: block;
+				border-radius: 4px;
+			}
+
+			footer {
+				text-align: center;
+				padding: 40px 20px;
+				font-size: 0.85rem;
+				color: #666;
+			}
+
+			footer a {
+				color: #888;
+				text-decoration: none;
+			}
+
+			footer a:hover {
+				color: #fff;
+			}
+
+			/* Lightbox */
+			.lightbox {
+				display: none;
+				position: fixed;
+				inset: 0;
+				z-index: 1000;
+				background: rgba(0, 0, 0, 0.92);
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.lightbox.open {
+				display: flex;
+			}
+
+			.lightbox-header {
+				position: sticky;
+				top: 0;
+				z-index: 1001;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 12px 20px;
+				background: rgba(0, 0, 0, 0.85);
+				backdrop-filter: blur(8px);
+				-webkit-backdrop-filter: blur(8px);
+				border-bottom: 1px solid #333;
+				flex-shrink: 0;
+			}
+
+			.lightbox-source {
+				color: #4fc3f7;
+				text-decoration: none;
+				font-size: 0.95rem;
+				font-weight: 600;
+				max-width: 70%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.lightbox-source:hover {
+				color: #81d4fa;
+				text-decoration: underline;
+			}
+
+			.lightbox-close {
+				background: none;
+				border: 1px solid #555;
+				color: #fff;
+				font-size: 1.1rem;
+				cursor: pointer;
+				padding: 6px 16px;
+				border-radius: 6px;
+				flex-shrink: 0;
+			}
+
+			.lightbox-close:hover {
+				background: #333;
+			}
+
+			.lightbox-body {
+				flex: 1;
+				overflow: auto;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				padding: 24px 16px;
+			}
+
+			.lightbox-body img {
+				height: 90vh;
+				width: auto;
+				max-width: none;
+				flex: 0 0 auto;
+				align-self: flex-start;
+				display: block;
+				border-radius: 4px;
+			}
+
+			.charts a {
+				cursor: zoom-in;
+				display: block;
+				width: 100%;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<header>
+			<h1>WTF Happened in 2025?</h1>
+		</header>
+
+		<main class="charts">
+			<a data-src="/images/metr2025.png" data-href="https://metr.org/time-horizons/" data-alt="METR 2025">
+				<img src="/images/metr2025.png" alt="METR 2025" />
+			</a>
+			<a data-src="/images/gdb-dec2025memo.png" data-href="https://nitter.net/gdb/status/2019566641491963946" data-alt="GDB December 2025 Memo">
+				<img src="/images/gdb-dec2025memo.png" alt="GDB December 2025 Memo" />
+			</a>
+			<a data-src="/images/shumer-big.png" data-href="https://x.com/mattshumer_/status/2021256989876109403" data-alt="Matt Shumer">
+				<img src="/images/shumer-big.png" alt="Matt Shumer" />
+			</a>
+			<a data-src="/images/citrini-report.png" data-href="https://www.citriniresearch.com/p/2028gic" data-alt="Citrini Research Report">
+				<img src="/images/citrini-report.png" alt="Citrini Research Report" />
+			</a>
+			<a data-src="/images/ai2027.png" data-href="https://ai-2027.com/race" data-alt="AI 2027">
+				<img src="/images/ai2027.png" alt="AI 2027" />
+			</a>
+			<a data-src="/images/nextjs-cloudflare.png" data-href="https://x.com/BraydenWilmoth/status/2026392176301580741?s=20" data-alt="Next.js + Cloudflare">
+				<img src="/images/nextjs-cloudflare.png" alt="Next.js + Cloudflare" />
+			</a>
+		</main>
+
+		<div class="lightbox" id="lightbox">
+			<div class="lightbox-header">
+				<a class="lightbox-source" id="lightbox-link" href="#" target="_blank" rel="noopener noreferrer">View source ↗</a>
+				<button class="lightbox-close" id="lightbox-close">✕ Close</button>
+			</div>
+			<div class="lightbox-body">
+				<img id="lightbox-img" src="" alt="" />
+			</div>
+		</div>
+
+		<footer>
+			<p>Have a chart that belongs here? <a href="https://github.com/swyxio/wtf2025/compare" target="_blank" rel="noopener noreferrer">Open a PR</a> to add it.</p>
+			<p><a href="https://github.com/swyxio/wtf2025" target="_blank" rel="noopener noreferrer">Source on GitHub</a></p>
+		</footer>
+		<script>
+			const lightbox = document.getElementById('lightbox')!;
+			const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+			const lightboxLink = document.getElementById('lightbox-link') as HTMLAnchorElement;
+			const lightboxClose = document.getElementById('lightbox-close')!;
+
+			document.querySelectorAll('.charts a[data-src]').forEach((el) => {
+				el.addEventListener('click', (e) => {
+					e.preventDefault();
+					const a = el as HTMLElement;
+					lightboxImg.src = a.dataset.src!;
+					lightboxImg.alt = a.dataset.alt || '';
+					lightboxLink.href = a.dataset.href!;
+					lightboxLink.textContent = a.dataset.href!;
+					lightbox.classList.add('open');
+					document.body.style.overflow = 'hidden';
+				});
+			});
+
+			function closeLightbox() {
+				lightbox.classList.remove('open');
+				document.body.style.overflow = '';
+			}
+
+			lightboxClose.addEventListener('click', closeLightbox);
+			lightbox.addEventListener('click', (e) => {
+				if (e.target === lightbox || (e.target as HTMLElement).classList.contains('lightbox-body')) {
+					closeLightbox();
+				}
+			});
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Escape') closeLightbox();
+			});
+		</script>
 	</body>
 </html>

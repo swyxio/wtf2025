@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#1a1a1a" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Placeholder Chart — Replace With Real Data</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="60" x2="80" y2="380" stroke="#555" stroke-width="1.5"/>
+  <line x1="80" y1="380" x2="750" y2="380" stroke="#555" stroke-width="1.5"/>
+
+  <!-- Y-axis labels -->
+  <text x="70" y="385" text-anchor="end" fill="#888" font-family="Arial, sans-serif" font-size="11">0</text>
+  <text x="70" y="305" text-anchor="end" fill="#888" font-family="Arial, sans-serif" font-size="11">25</text>
+  <text x="70" y="225" text-anchor="end" fill="#888" font-family="Arial, sans-serif" font-size="11">50</text>
+  <text x="70" y="145" text-anchor="end" fill="#888" font-family="Arial, sans-serif" font-size="11">75</text>
+  <text x="70" y="68" text-anchor="end" fill="#888" font-family="Arial, sans-serif" font-size="11">100</text>
+
+  <!-- Grid lines -->
+  <line x1="80" y1="300" x2="750" y2="300" stroke="#333" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="80" y1="220" x2="750" y2="220" stroke="#333" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="80" y1="140" x2="750" y2="140" stroke="#333" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="80" y1="60" x2="750" y2="60" stroke="#333" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+  <!-- X-axis labels -->
+  <text x="120" y="400" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">2000</text>
+  <text x="253" y="400" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">2005</text>
+  <text x="386" y="400" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">2010</text>
+  <text x="519" y="400" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">2015</text>
+  <text x="652" y="400" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">2020</text>
+  <text x="740" y="400" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" font-size="11">2025</text>
+
+  <!-- Vertical marker line at 2025 -->
+  <line x1="720" y1="60" x2="720" y2="380" stroke="#ff4444" stroke-width="2" stroke-dasharray="6,4" opacity="0.8"/>
+  <text x="720" y="425" text-anchor="middle" fill="#ff4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">2025</text>
+
+  <!-- Data line (going up dramatically) -->
+  <polyline
+    points="120,360 186,350 253,340 319,330 386,310 419,290 452,260 486,230 519,200 552,170 586,140 619,110 652,90 685,80 720,60"
+    fill="none"
+    stroke="#4fc3f7"
+    stroke-width="2.5"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+
+  <!-- Glow effect on line -->
+  <polyline
+    points="120,360 186,350 253,340 319,330 386,310 419,290 452,260 486,230 519,200 552,170 586,140 619,110 652,90 685,80 720,60"
+    fill="none"
+    stroke="#4fc3f7"
+    stroke-width="6"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+    opacity="0.2"
+  />
+</svg>
