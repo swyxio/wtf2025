@@ -3,12 +3,18 @@ const charts = [
 	{
 		url: "https://metr.org/time-horizons/",
 		img: "/images/metr2025.png",
-		text: "METR trendline of Long Tasks Agent Capabilities <br />breaks down immediately after publication"
+		text: "METR trendline of Long Tasks Agent Capabilities <br />breaks down immediately after publication",
+		extraLinks: [
+			{ url: "https://news.smol.ai/issues/25-03-19-ainews-every-7-months-the-moores-law-for-agent-autonomy", label: "smol.ai" }
+		]
 	},
 	{
-		url: "https://news.smol.ai/issues/25-12-11-gpt-52",
+		url: "https://evals.openai.com/gdpval/leaderboard",
 		img: "/images/gdpval-2025.png",
-		text: "OpenAI releases GDPVal assessing frontier models to be close to parity (50%) of human expert performance, particularly in Software Development but also other domains. Later models like GPT 5.2 Pro report 74.1% exceeding human experts."
+		text: "OpenAI releases GDPVal assessing frontier models to be close to parity (50%) of human expert performance, particularly in Software Development but also other domains. Later models like GPT 5.2 Pro report 74.1% exceeding human experts.",
+		extraLinks: [
+			{ url: "https://news.smol.ai/issues/25-12-11-gpt-52", label: "smol.ai" }
+		]
 	},
 	{
 		url: "https://nitter.net/karpathy/status/2026731645169185220",
@@ -18,7 +24,10 @@ const charts = [
 	{
 		url: "https://x.com/lexfridman/status/2021785659644453136?s=20",
 		img: "/images/openclaw-stars.png",
-		text: "Independent Austrian developer Pete Steinberger creates OpenClaw over Christmas using Codex, overtaking some of the most popular open source projects and joining OpenAI."
+		text: "Independent Austrian developer Pete Steinberger creates OpenClaw over Christmas using Codex, overtaking some of the most popular open source projects and joining OpenAI.",
+		extraLinks: [
+			{ url: "https://x.com/sama/status/2023150230905159801", label: "sama" }
+		]
 	},
 	{
 		url: "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation",
@@ -28,7 +37,11 @@ const charts = [
 	{
 		url: "https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/",
 		img: "/images/gemini-imo-gold.png",
-		text: "Google DeepMind trains an \"advanced Gemini model with Deep Think\" that is officially certified to achieve Gold performance at the International Math Olympiad, done purely in token space under human rules (whereas 2024's Silver needed a AlphaProof and AlphaGeometry model and over 60 hours). Same model later wins IOI, ICPC and IOAA gold."
+		text: "Google DeepMind trains an \"advanced Gemini model with Deep Think\" that is officially certified to achieve Gold performance at the International Math Olympiad, done purely in token space under human rules (whereas 2024's Silver needed a AlphaProof and AlphaGeometry model and over 60 hours). Same model later wins IOI, ICPC and IOAA gold.",
+		extraLinks: [
+			{ url: "https://x.com/deedydas/status/1889713595384312089?s=20", label: "deedy" },
+			{ url: "https://x.com/deedydas/status/1977029236390285608?s=20", label: "deedy" }
+		]
 	},
 	{
 		url: "https://nitter.net/gdb/status/2019566641491963946",
@@ -38,7 +51,10 @@ const charts = [
 	{
 		url: "https://www.youtube.com/watch?v=zuJyJP517Uw",
 		img: "/images/yegge_ide.jpeg",
-		text: "Steve Yegge and Gene Kim predict the death of IDE in Nov 2025"
+		text: "Steve Yegge and Gene Kim predict the death of IDE in Nov 2025",
+		extraLinks: [
+			{ url: "https://www.youtube.com/watch?v=zuJyJP517Uw", label: "youtube" }
+		]
 	},
 	{
 		url: "https://stripe.com/annual-updates/2025",
@@ -169,11 +185,9 @@ const charts = [
 				border-radius: 6px;
 			}
 
-			.charts a {
-				display: block;
-				width: 100%;
-				text-decoration: none;
-				color: #fff;
+			.chart-card {
+				/* width: 100%; */
+				position: relative;
 				background: #111;
 				padding: 16px;
 				border-radius: 12px;
@@ -181,10 +195,16 @@ const charts = [
 				transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 			}
 
-			.charts a:hover {
+			.chart-card:hover {
 				transform: translateY(-4px);
 				border-color: rgba(255, 255, 255, 0.15);
 				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+			}
+
+			.main-link {
+				display: block;
+				text-decoration: none;
+				color: #fff;
 			}
 
 			.chart-label {
@@ -201,7 +221,33 @@ const charts = [
 				transition: color 0.3s ease;
 			}
 
-			.charts a:hover .chart-label {
+			.chart-card:hover .chart-label {
+				color: #fff;
+			}
+
+			.extra-links {
+				position: absolute;
+				bottom: -14px;
+				right: 24px;
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				font-size: 0.8rem;
+				color: #666;
+				background: #000;
+				padding: 4px 12px;
+				border-radius: 20px;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				z-index: 10;
+			}
+
+			.extra-link {
+				color: #999;
+				text-decoration: none;
+				transition: color 0.2s ease;
+			}
+
+			.extra-link:hover {
 				color: #fff;
 			}
 
@@ -231,10 +277,21 @@ const charts = [
 
 		<main class="charts">
 			{charts.map((chart) => (
-				<a href={chart.url} target="_blank" rel="noopener noreferrer">
-					<img src={chart.img} alt={chart.text.replace(/<[^>]*>?/gm, '')} />
-					<span class="chart-label" set:html={chart.text} />
-				</a>
+				<div class="chart-card">
+					<a href={chart.url} target="_blank" rel="noopener noreferrer" class="main-link">
+						<img src={chart.img} alt={chart.text.replace(/<[^>]*>?/gm, '')} />
+						<span class="chart-label" set:html={chart.text} />
+					</a>
+					{chart.extraLinks && chart.extraLinks.length > 0 && (
+						<span class="extra-links">
+							More: {chart.extraLinks.map(link => (
+								<a href={link.url} target="_blank" rel="noopener noreferrer" class="extra-link">
+									{link.label}
+								</a>
+							))}
+						</span>
+					)}
+				</div>
 			))}
 		</main>
 
