@@ -1,5 +1,56 @@
 ---
-
+const charts = [
+	{
+		url: "https://metr.org/time-horizons/",
+		img: "/images/metr2025.png",
+		text: "METR trendline of Long Tasks Agent Capabilities <br />breaks down immediately after publication"
+	},
+	{
+		url: "https://nitter.net/karpathy/status/2026731645169185220",
+		img: "/images/karpathy-dec2025.png",
+		text: "Andrej Karpathy says 'programming is unrecognizable' after December 2025"
+	},
+	{
+		url: "https://nitter.net/gdb/status/2019566641491963946",
+		img: "/images/gdb-dec2025memo.png",
+		text: "Greg Brockman mandates all of OpenAI to use Agents <br />over IDE/Terminal for coding by March 2026"
+	},
+	{
+		url: "https://www.youtube.com/watch?v=zuJyJP517Uw",
+		img: "/images/yegge_ide.jpeg",
+		text: "Steve Yegge and Gene Kim predict the death of IDE in Nov 2025"
+	},
+	{
+		url: "https://stripe.com/annual-updates/2025",
+		img: "/images/stripe2025.png",
+		text: "Stripe's 2025 Annual Report shows software jumping to 46% of US GDP growth, <br />a 50 year high"
+	},
+	{
+		url: "https://x.com/khantext_1/status/2026708751240019982/photo/1",
+		img: "/images/stripe2025pt2.png",
+		text: "Stripe's 2025 Annual Report shows 2x more companies reaching $10m ARR <br /> and  4x more GitHub pushes vs 2024"
+	},
+	{
+		url: "https://x.com/BraydenWilmoth/status/2026392176301580741?s=20",
+		img: "/images/nextjs-cloudflare.png",
+		text: 'Cloudflare rewrites Next.js in 1 week with 1 Engineering Manager. Previous attempts failed + took "months" and "several teams". New traffic-aware features added.'
+	},
+	{
+		url: "https://ai-2027.com/race",
+		img: "/images/ai2027.png",
+		text: "AI 2027 (published May 2025) predicts crossover from 'unreliable' to 'reliable' agents in 2025-2026 and 'some' job loss."
+	},
+	// {
+	// 	url: "https://www.citriniresearch.com/p/2028gic",
+	// 	img: "/images/citrini-report.png",
+	// 	text: "Citrini Research calls out a potential \"human intelligence displacement spiral\" impacting a wide range of SaaS and FinTech stocks, and DoorDash."
+	// },
+	{
+		url: "https://x.com/mattshumer_/status/2021256989876109403",
+		img: "/images/shumer-big.png",
+		text: "Matt Shhumer writes 'I am no longer needed for the actual technical work of my job.' responding to GPT 5.3 Codex and Claude Opus 4.6."
+	}
+];
 ---
 
 <html lang="en">
@@ -26,21 +77,34 @@
 
 			header {
 				text-align: center;
-				padding: 60px 20px 40px;
+				padding: 80px 20px 60px;
 			}
 
 			header h1 {
-				font-size: clamp(2.5rem, 6vw, 4.5rem);
+				font-size: clamp(3rem, 8vw, 5rem);
 				font-weight: 900;
 				letter-spacing: -0.02em;
 				line-height: 1.1;
+				background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				margin-bottom: 20px;
+			}
+
+			.subtitle {
+				font-size: clamp(1.1rem, 2vw, 1.4rem);
+				color: #888;
+				max-width: 600px;
+				margin: 0 auto;
+				line-height: 1.5;
 			}
 
 			.charts {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				gap: 40px;
+				gap: 60px;
 				padding: 20px 20px 80px;
 				max-width: 900px;
 				margin: 0 auto;
@@ -50,7 +114,43 @@
 				width: 100%;
 				height: auto;
 				display: block;
-				border-radius: 4px;
+				border-radius: 6px;
+			}
+
+			.charts a {
+				display: block;
+				width: 100%;
+				text-decoration: none;
+				color: #fff;
+				background: #111;
+				padding: 16px;
+				border-radius: 12px;
+				border: 1px solid rgba(255, 255, 255, 0.05);
+				transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.charts a:hover {
+				transform: translateY(-4px);
+				border-color: rgba(255, 255, 255, 0.15);
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+			}
+
+			.chart-label {
+				/* font-size: clamp(1.1rem, 2.5vw, 1.4rem); */
+				max-width: 80%;
+				margin: 0 auto;
+				font-weight: 600;
+				color: #a0a0a0;
+				margin-top: 24px;
+				margin-bottom: 8px;
+				line-height: 1.3;
+				display: block;
+				text-align: center;
+				transition: color 0.3s ease;
+			}
+
+			.charts a:hover .chart-label {
+				color: #fff;
 			}
 
 			footer {
@@ -74,19 +174,16 @@
 	<body>
 		<header>
 			<h1>WTF Happened in 2025?</h1>
+			<p class="subtitle">A curated collection of charts, screenshots, and visualizations documenting the wild developments in AI and tech throughout 2025.</p>
 		</header>
 
 		<main class="charts">
-			<a href="https://metr.org/time-horizons/" target="_blank" rel="noopener noreferrer"><img src="/images/metr2025.png" alt="METR 2025" /></a>
-			<a href="https://nitter.net/karpathy/status/2026731645169185220" target="_blank" rel="noopener noreferrer"><img src="/images/karpathy-dec2025.png" alt="Karpathy December 2025" /></a>
-			<a href="https://nitter.net/gdb/status/2019566641491963946" target="_blank" rel="noopener noreferrer"><img src="/images/gdb-dec2025memo.png" alt="GDB December 2025 Memo" /></a>
-			<a href="https://www.youtube.com/watch?v=zuJyJP517Uw" target="_blank" rel="noopener noreferrer"><img src="/images/yegge_ide.jpeg" alt="Yegge IDE" /></a>
-			<a href="https://stripe.com/annual-updates/2025" target="_blank" rel="noopener noreferrer"><img src="/images/stripe2025.png" alt="Stripe 2025" /></a>
-			<a href="https://x.com/khantext_1/status/2026708751240019982/photo/1" target="_blank" rel="noopener noreferrer"><img src="/images/stripe2025pt2.png" alt="Stripe 2025 Part 2" /></a>
-			<a href="https://x.com/BraydenWilmoth/status/2026392176301580741?s=20" target="_blank" rel="noopener noreferrer"><img src="/images/nextjs-cloudflare.png" alt="Next.js + Cloudflare" /></a>
-			<a href="https://ai-2027.com/race" target="_blank" rel="noopener noreferrer"><img src="/images/ai2027.png" alt="AI 2027" /></a>
-			<a href="https://www.citriniresearch.com/p/2028gic" target="_blank" rel="noopener noreferrer"><img src="/images/citrini-report.png" alt="Citrini Research Report" /></a>
-			<a href="https://x.com/mattshumer_/status/2021256989876109403" target="_blank" rel="noopener noreferrer"><img src="/images/shumer-big.png" alt="Matt Shumer" /></a>
+			{charts.map((chart) => (
+				<a href={chart.url} target="_blank" rel="noopener noreferrer">
+					<img src={chart.img} alt={chart.text.replace(/<[^>]*>?/gm, '')} />
+					<span class="chart-label" set:html={chart.text} />
+				</a>
+			))}
 		</main>
 
 		<footer>
