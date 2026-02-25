@@ -1,0 +1,147 @@
+<!-- Lightbox CSS (goes inside <style>) -->
+<!--
+/* Lightbox */
+.lightbox {
+	display: none;
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.92);
+	flex-direction: column;
+	align-items: center;
+}
+
+.lightbox.open {
+	display: flex;
+}
+
+.lightbox-header {
+	position: sticky;
+	top: 0;
+	z-index: 1001;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 20px;
+	background: rgba(0, 0, 0, 0.85);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border-bottom: 1px solid #333;
+	flex-shrink: 0;
+}
+
+.lightbox-source {
+	color: #4fc3f7;
+	text-decoration: none;
+	font-size: 0.95rem;
+	font-weight: 600;
+	max-width: 70%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.lightbox-source:hover {
+	color: #81d4fa;
+	text-decoration: underline;
+}
+
+.lightbox-close {
+	background: none;
+	border: 1px solid #555;
+	color: #fff;
+	font-size: 1.1rem;
+	cursor: pointer;
+	padding: 6px 16px;
+	border-radius: 6px;
+	flex-shrink: 0;
+}
+
+.lightbox-close:hover {
+	background: #333;
+}
+
+.lightbox-body {
+	flex: 1;
+	overflow: auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 24px 16px;
+}
+
+.lightbox-image-frame {
+	max-height: 90vh;
+	max-width: 90vw;
+	overflow: auto;
+}
+
+.lightbox-body img {
+	height: auto;
+	width: auto;
+	max-width: 90vw;
+	flex: 0 0 auto;
+	align-self: flex-start;
+	display: block;
+	border-radius: 4px;
+}
+
+.charts a {
+	cursor: zoom-in;
+	display: block;
+	width: 100%;
+}
+-->
+
+<!-- Lightbox HTML (goes after </main>) -->
+<!--
+<div class="lightbox" id="lightbox">
+	<div class="lightbox-header">
+		<a class="lightbox-source" id="lightbox-link" href="#" target="_blank" rel="noopener noreferrer">View source ↗</a>
+		<button class="lightbox-close" id="lightbox-close">✕ Close</button>
+	</div>
+	<div class="lightbox-body">
+		<div class="lightbox-image-frame">
+			<img id="lightbox-img" src="" alt="" />
+		</div>
+	</div>
+</div>
+-->
+
+<!-- Lightbox JS (goes in <script>) -->
+<!--
+const lightbox = document.getElementById('lightbox')!;
+const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+const lightboxLink = document.getElementById('lightbox-link') as HTMLAnchorElement;
+const lightboxClose = document.getElementById('lightbox-close')!;
+
+document.querySelectorAll('.charts a[data-src]').forEach((el) => {
+	el.addEventListener('click', (e) => {
+		e.preventDefault();
+		const a = el as HTMLElement;
+		lightboxImg.src = a.dataset.src!;
+		lightboxImg.alt = a.dataset.alt || '';
+		lightboxLink.href = a.dataset.href!;
+		lightboxLink.textContent = a.dataset.href!;
+		lightbox.classList.add('open');
+		document.body.style.overflow = 'hidden';
+	});
+});
+
+function closeLightbox() {
+	lightbox.classList.remove('open');
+	document.body.style.overflow = '';
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+	if (e.target === lightbox || (e.target as HTMLElement).classList.contains('lightbox-body')) {
+		closeLightbox();
+	}
+});
+document.addEventListener('keydown', (e) => {
+	if (e.key === 'Escape') closeLightbox();
+});
+-->
