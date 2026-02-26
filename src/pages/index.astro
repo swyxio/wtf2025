@@ -1,116 +1,15 @@
 ---
-const charts = [
-	{
-		url: "https://metr.org/time-horizons/",
-		img: "/images/metr2025.png",
-		text: "METR trendline of Long Tasks Agent Capabilities <br />breaks down immediately after publication",
-		extraLinks: [
-			{ url: "https://news.smol.ai/issues/25-03-19-ainews-every-7-months-the-moores-law-for-agent-autonomy", label: "smol.ai" }
-		]
-	},
-	{
-		url: "https://evals.openai.com/gdpval/leaderboard",
-		img: "/images/gdpval-2025.png",
-		text: "OpenAI releases GDPVal assessing frontier models to be close to parity (50%) of human expert performance, particularly in Software Development but also other domains. Later models like GPT 5.2 Pro report 74.1% exceeding human experts.",
-		extraLinks: [
-			{ url: "https://news.smol.ai/issues/25-12-11-gpt-52", label: "smol.ai" }
-		]
-	},
-	{
-		url: "https://nitter.net/karpathy/status/2026731645169185220",
-		img: "/images/karpathy-dec2025.png",
-		text: "Andrej Karpathy says 'programming is unrecognizable' after December 2025"
-	},
-	{
-		url: "https://x.com/lexfridman/status/2021785659644453136?s=20",
-		img: "/images/openclaw-stars.png",
-		text: "Independent Austrian developer Pete Steinberger creates OpenClaw over Christmas using Codex, overtaking some of the most popular open source projects and joining OpenAI.",
-		extraLinks: [
-			{ url: "https://x.com/sama/status/2023150230905159801", label: "sama" }
-		]
-	},
-	{
-		url: "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation",
-		img: "/images/claudecode-25b.png",
-		text: "Boris Cherny of Anthropic releases Claude Code in Feb 2025, which goes from $0 to $2.5B in ARR before its first birthday."
-	},
-	{
-		url: "https://x.com/bcherny/status/2004897269674639461?s=20",
-		img: "/images/bcherny-claudecode100.png",
-		text: "Boris Cherny from Anthropic notes that Claude Code is now writing 100% of his contributions to Claude Code."
-	},
-	{
-		url: "https://newsletter.semianalysis.com/p/claude-code-is-the-inflection-point",
-		img: "/images/claudecode4.png",
-		text: "SemiAnalysis estimates Claude Code makes up 4% of Public Commits on GitHub in Feb 2026, trending to 25-50% by year end.",
-		extraLinks: [
-			{ url: "https://www.latent.space/p/valuemule", label: "latent.space" }
-		]
-	},
-	{
-		url: "https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/",
-		img: "/images/gemini-imo-gold.png",
-		text: "Google DeepMind trains an \"advanced Gemini model with Deep Think\" that is officially certified to achieve Gold performance at the International Math Olympiad, done purely in token space under human rules (whereas 2024's Silver needed a AlphaProof and AlphaGeometry model and over 60 hours). Same model later wins IOI, ICPC and IOAA gold.",
-		extraLinks: [
-			{ url: "https://x.com/deedydas/status/1889713595384312089?s=20", label: "deedy" },
-			{ url: "https://x.com/deedydas/status/1977029236390285608?s=20", label: "deedy" }
-		]
-	},
-	{
-		url: "https://nitter.net/gdb/status/2019566641491963946",
-		img: "/images/gdb-dec2025memo.png",
-		text: "Greg Brockman mandates all of OpenAI to use Agents <br />over IDE/Terminal for coding by March 2026"
-	},
-	{
-		url: "https://www.youtube.com/watch?v=zuJyJP517Uw",
-		img: "/images/yegge_ide.jpeg",
-		text: "Steve Yegge and Gene Kim predict the death of IDE in Nov 2025",
-		extraLinks: [
-			{ url: "https://www.youtube.com/watch?v=zuJyJP517Uw", label: "youtube" }
-		]
-	},
-	{
-		url: "https://stripe.com/annual-updates/2025",
-		img: "/images/stripe2025.png",
-		text: "Stripe's 2025 Annual Report shows software jumping to 46% of US GDP growth, <br />a 50 year high"
-	},
-	{
-		url: "https://x.com/khantext_1/status/2026708751240019982/photo/1",
-		img: "/images/stripe2025pt2.png",
-		text: "Stripe's 2025 Annual Report shows 2x more companies reaching $10m ARR <br /> and  4x more GitHub pushes vs 2024"
-	},
-	{
-		url: "https://x.com/BraydenWilmoth/status/2026392176301580741?s=20",
-		img: "/images/nextjs-cloudflare.png",
-		text: 'Cloudflare rewrites Next.js in 1 week with 1 Engineering Manager. Previous attempts failed + took "months" and "several teams". New traffic-aware features added.'
-	},
-	{
-		url: "https://ai-2027.com/race",
-		img: "/images/ai2027.png",
-		text: "AI 2027 (published May 2025) predicts crossover from 'unreliable' to 'reliable' agents in 2025-2026 and 'some' job loss."
-	},
-	// // citrini report is under consideration but is speculative and contains no actual datapoints to rely on apart from the stock market reaction
-	// {
-	// 	url: "https://www.citriniresearch.com/p/2028gic",
-	// 	img: "/images/citrini-report.png",
-	// 	text: "Citrini Research calls out a potential \"human intelligence displacement spiral\" impacting a wide range of SaaS and FinTech stocks, and DoorDash."
-	// },
-	{
-		url: "https://x.com/mattshumer_/status/2021256989876109403",
-		img: "/images/shumer-big.png",
-		text: "Matt Shumer writes 'I am no longer needed for the actual technical work of my job.' responding to GPT 5.3 Codex and Claude Opus 4.6."
-	},
-	{
-		url: "https://mathstodon.xyz/@tao/115855840223258103",
-		img: "/images/terencetao-erdos.png",
-		text: "GPT 5.2 Pro solves Erdos problem 728 \"more or less autonomously\" - which Terence Tao calls \"a genuine increase in capability in recent months\""
-	},
-	{
-		url: "https://x.com/KobeissiLetter/status/2016628852655890621",
-		img: "/images/dram-shortage.png",
-		text: "Global memory shortage makes DRAM prices run up 19-24x in 2025"
-	}
-];
+import { getCollection, render } from 'astro:content';
+
+const chartEntries = await getCollection('charts');
+const sorted = chartEntries.sort((a, b) => a.data.order - b.data.order);
+
+const charts = await Promise.all(
+	sorted.map(async (entry) => {
+		const { Content } = await render(entry);
+		return { data: entry.data, body: entry.body, Content };
+	})
+);
 ---
 
 <html lang="en">
@@ -121,7 +20,7 @@ const charts = [
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>WTF Happened in 2025?</title>
-		
+
 		<!-- Primary Meta Tags -->
 		<meta name="title" content="WTF Happened in 2025?" />
 		<meta name="description" content="A collection of datapoints in or around 2025 which we may look back as a historical inflection point. Open source & curated in realtime by Latent Space." />
@@ -143,7 +42,7 @@ const charts = [
 		<meta name="twitter:description" content="A collection of datapoints in or around 2025 which we may look back as a historical inflection point. Open source & curated in realtime by Latent Space." />
 		<meta name="twitter:image" content="https://wtfhappened2025.com/images/openclaw-stars-square.png" />
 		<meta name="twitter:image:alt" content="OpenClaw stars growth chart" />
-		
+
 		<style>
 			* {
 				margin: 0;
@@ -248,6 +147,10 @@ const charts = [
 				transition: color 0.3s ease;
 			}
 
+			.chart-label p {
+				margin: 0;
+			}
+
 			.chart-card:hover .chart-label {
 				color: #fff;
 			}
@@ -303,15 +206,15 @@ const charts = [
 		</header>
 
 		<main class="charts">
-			{charts.map((chart) => (
+			{charts.map(({ data, body, Content }) => (
 				<div class="chart-card">
-					<a href={chart.url} target="_blank" rel="noopener noreferrer" class="main-link">
-						<img src={chart.img} alt={chart.text.replace(/<[^>]*>?/gm, '')} />
-						<span class="chart-label" set:html={chart.text} />
+					<a href={data.url} target="_blank" rel="noopener noreferrer" class="main-link">
+						<img src={data.img} alt={body?.trim()} />
+						<div class="chart-label"><Content /></div>
 					</a>
-					{chart.extraLinks && chart.extraLinks.length > 0 && (
+					{data.extraLinks && data.extraLinks.length > 0 && (
 						<span class="extra-links">
-							More: {chart.extraLinks.map(link => (
+							More: {data.extraLinks.map(link => (
 								<a href={link.url} target="_blank" rel="noopener noreferrer" class="extra-link">
 									{link.label}
 								</a>
@@ -323,7 +226,7 @@ const charts = [
 		</main>
 
 		<footer>
-			<p>Have a chart that belongs here? <a href="https://github.com/swyxio/wtf2025/edit/main/src/pages/index.astro" target="_blank" rel="noopener noreferrer">Open a PR</a> to add it.</p>
+			<p>Have a chart that belongs here? <a href="https://github.com/swyxio/wtf2025/tree/main/src/data/charts" target="_blank" rel="noopener noreferrer">Open a PR</a> to add it.</p>
 			<p><a href="https://github.com/swyxio/wtf2025" target="_blank" rel="noopener noreferrer">Source on GitHub</a> &bull; Inspired by <a href="https://wtfhappenedin1971.com/" target="_blank" rel="noopener noreferrer">WTF Happened In 1971?</a></p>
 		</footer>
 	</body>
