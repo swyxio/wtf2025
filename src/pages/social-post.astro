@@ -1,58 +1,82 @@
 ---
 const projects = [
 	{
+		id: "openai",
 		title: "OpenAI x Hardware",
 		subtitle: "The future of AI & hardware",
 		meta: "OPENAI X HARDWARE · CONCEPT 2025",
-		gradient: "linear-gradient(135deg, #f4a261 0%, #e88d9e 40%, #c7a0d4 70%, #b8b0e0 100%)",
 		type: "case-study",
-		size: "large",
+		role: "Lead Product Designer",
+		timeline: "August – September 2025",
+		team: "3 Designers",
+		skills: "Product Design, Product Strategy, Prototyping",
+		overview: "What should OpenAI build as their first AI device?",
+		body: "We explored the intersection of AI and hardware, designing a wearable device concept called \"Tomo\" that integrates with ChatGPT's Moments feature to create a personal AI companion that captures and remembers everyday moments.",
 	},
 	{
+		id: "pokergpt",
 		title: "PokerGPT",
 		subtitle: "The world's first AI poker coach",
 		meta: "POKERGPT · SHIPPED 2023",
-		gradient: "linear-gradient(160deg, #0a1628 0%, #152447 50%, #1a3060 100%)",
 		type: "case-study",
-		size: "large",
-		lightText: true,
-		mockup: "poker",
+		role: "Product Designer + Engineer",
+		timeline: "2023",
+		team: "2 People",
+		skills: "Product Design, Full-Stack Dev, AI/ML",
+		overview: "How might we make poker strategy accessible to everyone?",
+		body: "PokerGPT is the world's first AI poker coach, designed to help players of all levels improve their game through personalized coaching and hand analysis.",
 	},
 	{
+		id: "alexa",
 		title: "'Alexa,",
 		subtitle: "Novel consumer AI experiences",
 		meta: "AMAZON ALEXA+ · CONTRACT 2025",
-		gradient: "linear-gradient(180deg, #0a1628 0%, #0d1f3d 40%, #1a3a6a 100%)",
 		type: "overview",
-		size: "large",
-		lightText: true,
-		mockup: "alexa",
+		role: "Contract Product Designer",
+		timeline: "2025",
+		team: "Amazon Team",
+		skills: "Product Design, Voice UI, Prototyping",
+		overview: "Reimagining voice-first AI interactions for the home.",
+		body: "Worked with Amazon's Alexa+ team to design novel consumer AI experiences, making voice interactions feel more natural and contextual.",
 	},
 	{
+		id: "1password",
 		title: "1Password",
 		subtitle: "Bringing autofill to macOS",
 		meta: "1PASSWORD · SHIPPED 2025",
-		gradient: "linear-gradient(135deg, #0a1628 0%, #111d35 50%, #1a2d52 100%)",
 		type: "case-study",
-		size: "large",
-		lightText: true,
-		mockup: "1password",
+		role: "Product Design Intern",
+		timeline: "Summer 2025",
+		team: "1Password Team",
+		skills: "Product Design, macOS Native, Prototyping",
+		overview: "How do we bring seamless autofill to macOS applications?",
+		body: "Shipped a new autofill experience for macOS that makes credential management seamless across native applications using system-level APIs.",
 	},
 	{
-		title: "Figma Mobile-First",
+		id: "figma",
+		title: "Figma",
 		subtitle: "Mobile-first for Figma",
 		meta: "FIGMA · CONCEPT 2025",
-		gradient: "linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%)",
 		type: "case-study",
-		size: "small",
+		role: "Product Designer",
+		timeline: "2025",
+		team: "Solo",
+		skills: "Product Design, Mobile Design, Prototyping",
+		overview: 'Designing "Live Comments" for mobile-first design feedback.',
+		body: 'Designed a concept for Figma\'s mobile experience, introducing "Live Comments" – a feature enabling asynchronous design feedback with voice annotations. Won a design challenge in NYC.',
 	},
 	{
-		title: "Meditation Trainer",
-		subtitle: "Making meditation accessible",
-		meta: "SIDE PROJECT · 2024",
-		gradient: "linear-gradient(135deg, #e8eaf6 0%, #c5cae9 50%, #9fa8da 100%)",
-		type: "website",
-		size: "small",
+		id: "earth",
+		title: "Google Earth",
+		subtitle: "Redesigning exploration",
+		meta: "GOOGLE EARTH · CONCEPT 2024",
+		type: "overview",
+		role: "Product Designer",
+		timeline: "2024",
+		team: "Solo",
+		skills: "Product Design, UX Research, Prototyping",
+		overview: "How might we make Earth exploration more engaging?",
+		body: "Redesigned the Google Earth exploration experience with a focus on storytelling and discovery, making geographic information more accessible and engaging.",
 	},
 ];
 
@@ -63,6 +87,17 @@ const experiences = [
 	{ year: "2023", company: "Onova", role: "Product Design + Engineering Intern" },
 ];
 
+const funProjects = [
+	{ img: "/fun/visionary.png", title: "Eye tracking for everyone", meta: "TREEHACKS · HACKATHON" },
+	{ img: "/fun/bubbl.png", title: "Making hacking for everyone", meta: "HACK WESTERN 12 · HACKATHON" },
+	{ img: "/fun/empa.png", title: "Smart glasses prototype", meta: "INDUSTRIAL DESIGN · 2024" },
+	{ img: "/fun/asl.png", title: "Sign language translator", meta: "HACKATHON · 2023" },
+	{ img: "/fun/tldw.png", title: "TLDW – too long didn't watch", meta: "SIDE PROJECT · 2024" },
+	{ img: "/fun/dataquest.png", title: "DataQuest analytics", meta: "HACKATHON · 2023" },
+	{ img: "/fun/rachelai.png", title: "RachelAI assistant", meta: "SIDE PROJECT · 2024" },
+	{ img: "/fun/zensphere.png", title: "Meditation trainer", meta: "SIDE PROJECT · 2024" },
+];
+
 const chatSuggestions = [
 	"What projects have you worked on?",
 	"Tell me about your design process",
@@ -71,1357 +106,1144 @@ const chatSuggestions = [
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Rachel Chen | Product Designer + Engineer</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-		<style is:global>
-			* { margin: 0; padding: 0; box-sizing: border-box; }
-
-			body {
-				background: #fff;
-				color: #1a1a1a;
-				font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-				min-height: 100vh;
-				overflow-x: hidden;
-			}
-
-			/* ── Navigation ── */
-			.nav {
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				height: 56px;
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				padding: 0 40px;
-				background: rgba(255,255,255,0.92);
-				backdrop-filter: blur(12px);
-				-webkit-backdrop-filter: blur(12px);
-				border-bottom: 1px solid rgba(0,0,0,0.06);
-				z-index: 100;
-			}
-
-			.nav-logo {
-				font-family: 'JetBrains Mono', monospace;
-				font-size: 13px;
-				font-weight: 500;
-				letter-spacing: 0.02em;
-				color: #1a1a1a;
-				display: flex;
-				align-items: center;
-				gap: 8px;
-			}
-
-			.nav-logo .dot {
-				width: 10px;
-				height: 10px;
-				border-radius: 50%;
-				background: #ff6b35;
-				display: inline-block;
-			}
-
-			.nav-logo span.separator {
-				color: #ccc;
-				font-weight: 300;
-			}
-
-			.nav-links {
-				display: flex;
-				align-items: center;
-				gap: 32px;
-			}
-
-			.nav-link {
-				font-family: 'Inter', sans-serif;
-				font-size: 13px;
-				font-weight: 500;
-				letter-spacing: 0.04em;
-				color: #999;
-				text-decoration: none;
-				cursor: pointer;
-				transition: color 0.2s ease;
-				text-transform: uppercase;
-			}
-
-			.nav-link:hover { color: #1a1a1a; }
-			.nav-link.active { color: #ff6b35; }
-
-			.nav-link.rachellm {
-				display: flex;
-				align-items: center;
-				gap: 6px;
-			}
-
-			.nav-link.rachellm .star {
-				color: #ff6b35;
-				font-size: 14px;
-			}
-
-			/* ── Main Content ── */
-			.main {
-				padding-top: 56px;
-				min-height: 100vh;
-				transition: margin-right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-			}
-
-			.main.drawer-open {
-				margin-right: 380px;
-			}
-
-			/* ── Hero Section ── */
-			.hero {
-				padding: 80px 40px 40px;
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 40px;
-				max-width: 1200px;
-				margin: 0 auto;
-			}
-
-			.hero-text h1 {
-				font-family: 'Instrument Serif', Georgia, serif;
-				font-size: clamp(36px, 4vw, 52px);
-				font-weight: 400;
-				line-height: 1.15;
-				color: #1a1a1a;
-				letter-spacing: -0.01em;
-			}
-
-			.hero-text h1 em {
-				font-style: italic;
-			}
-
-			.timeline {
-				padding-top: 12px;
-			}
-
-			.timeline-entry {
-				display: grid;
-				grid-template-columns: 50px 1fr 1fr;
-				gap: 16px;
-				padding: 8px 0;
-				font-size: 14px;
-				align-items: baseline;
-			}
-
-			.timeline-year {
-				color: #bbb;
-				font-variant-numeric: tabular-nums;
-			}
-
-			.timeline-company {
-				color: #1a1a1a;
-				font-weight: 500;
-			}
-
-			.timeline-role {
-				color: #999;
-				font-size: 13px;
-			}
-
-			/* ── Project Grid ── */
-			.projects {
-				padding: 20px 40px 80px;
-				max-width: 1200px;
-				margin: 0 auto;
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 24px;
-			}
-
-			.project-card {
-				position: relative;
-				border-radius: 16px;
-				overflow: hidden;
-				cursor: pointer;
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
-			}
-
-			.project-card:hover {
-				transform: translateY(-4px);
-				box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-			}
-
-			.project-card-inner {
-				position: relative;
-				width: 100%;
-				padding-bottom: 70%;
-				overflow: hidden;
-			}
-
-			.project-card-bg {
-				position: absolute;
-				inset: 0;
-				transition: transform 0.4s ease;
-			}
-
-			.project-card:hover .project-card-bg {
-				transform: scale(1.03);
-			}
-
-			.project-card-content {
-				position: absolute;
-				inset: 0;
-				display: flex;
-				flex-direction: column;
-				justify-content: flex-end;
-				padding: 32px;
-			}
-
-			.project-card-title {
-				font-family: 'Instrument Serif', Georgia, serif;
-				font-size: 28px;
-				font-weight: 400;
-				color: #fff;
-				line-height: 1.2;
-				text-shadow: 0 2px 8px rgba(0,0,0,0.15);
-			}
-
-			.project-card.dark-text .project-card-title {
-				color: #1a1a1a;
-				text-shadow: none;
-			}
-
-			/* Mockup illustrations */
-			.project-mockup {
-				position: absolute;
-				top: 50%;
-				right: 32px;
-				transform: translateY(-50%);
-			}
-
-			.mockup-poker {
-				width: 180px;
-				height: 180px;
-				background: rgba(255,255,255,0.12);
-				border-radius: 20px;
-				backdrop-filter: blur(8px);
-				display: flex;
-				flex-direction: column;
-				padding: 20px;
-				gap: 10px;
-			}
-
-			.mockup-poker .line {
-				height: 8px;
-				background: rgba(255,255,255,0.2);
-				border-radius: 4px;
-			}
-
-			.mockup-poker .line:nth-child(1) { width: 80%; }
-			.mockup-poker .line:nth-child(2) { width: 65%; background: rgba(107,79,187,0.5); }
-			.mockup-poker .line:nth-child(3) { width: 90%; }
-			.mockup-poker .line:nth-child(4) { width: 50%; background: rgba(107,79,187,0.5); }
-
-			.mockup-poker .send-btn {
-				margin-top: auto;
-				width: 32px;
-				height: 32px;
-				background: rgba(107,79,187,0.6);
-				border-radius: 50%;
-				align-self: flex-end;
-			}
-
-			.mockup-1password {
-				width: 200px;
-				background: rgba(255,255,255,0.95);
-				border-radius: 16px;
-				padding: 24px;
-				box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-			}
-
-			.mockup-1password .field-label {
-				font-size: 11px;
-				color: #666;
-				margin-bottom: 6px;
-			}
-
-			.mockup-1password .field {
-				display: flex;
-				align-items: center;
-				gap: 8px;
-				padding: 10px 14px;
-				background: #f5f5f5;
-				border-radius: 10px;
-				margin-bottom: 14px;
-			}
-
-			.mockup-1password .field span {
-				font-size: 12px;
-				color: #999;
-			}
-
-			.mockup-1password .field .icon {
-				width: 20px;
-				height: 20px;
-				background: #0066ff;
-				border-radius: 50%;
-				margin-left: auto;
-				flex-shrink: 0;
-			}
-
-			.mockup-1password .passkey-btn {
-				width: 100%;
-				padding: 10px;
-				background: #0066ff;
-				color: white;
-				border: none;
-				border-radius: 10px;
-				font-size: 12px;
-				font-weight: 500;
-				text-align: center;
-			}
-
-			.mockup-alexa {
-				position: absolute;
-				bottom: 40%;
-				left: 32px;
-				right: 32px;
-			}
-
-			.mockup-alexa .wave {
-				height: 60px;
-				position: relative;
-				overflow: hidden;
-			}
-
-			.mockup-alexa .wave svg {
-				width: 100%;
-				height: 100%;
-			}
-
-			/* Hover overlay button */
-			.project-card-overlay {
-				position: absolute;
-				inset: 0;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				opacity: 0;
-				transition: opacity 0.3s ease;
-			}
-
-			.project-card:hover .project-card-overlay {
-				opacity: 1;
-			}
-
-			.view-btn {
-				display: inline-flex;
-				align-items: center;
-				gap: 8px;
-				padding: 10px 20px;
-				background: #ff6b35;
-				color: #fff;
-				border-radius: 24px;
-				font-family: 'JetBrains Mono', monospace;
-				font-size: 11px;
-				font-weight: 500;
-				letter-spacing: 0.06em;
-				text-transform: uppercase;
-				text-decoration: none;
-				transform: translateY(8px);
-				transition: transform 0.3s ease;
-			}
-
-			.project-card:hover .view-btn {
-				transform: translateY(0);
-			}
-
-			.view-btn .arrow {
-				font-size: 14px;
-				transition: transform 0.2s ease;
-			}
-
-			.view-btn:hover .arrow {
-				transform: translateX(3px);
-			}
-
-			/* Project card meta below card */
-			.project-card-meta {
-				display: flex;
-				justify-content: space-between;
-				align-items: baseline;
-				padding: 12px 4px 0;
-			}
-
-			.project-card-subtitle {
-				font-size: 15px;
-				color: #1a1a1a;
-				font-weight: 400;
-			}
-
-			.project-card-info {
-				font-family: 'JetBrains Mono', monospace;
-				font-size: 11px;
-				color: #bbb;
-				letter-spacing: 0.04em;
-			}
-
-			/* ── Case Study View ── */
-			.case-study-overlay {
-				position: fixed;
-				inset: 0;
-				z-index: 200;
-				display: flex;
-				opacity: 0;
-				pointer-events: none;
-				transition: opacity 0.3s ease;
-			}
-
-			.case-study-overlay.visible {
-				opacity: 1;
-				pointer-events: auto;
-			}
-
-			.case-study-backdrop {
-				position: absolute;
-				inset: 0;
-				background: rgba(0,0,0,0.3);
-				backdrop-filter: blur(4px);
-			}
-
-			.case-study-panel {
-				position: relative;
-				width: 100%;
-				height: 100%;
-				background: #fff;
-				display: flex;
-				overflow: hidden;
-				transform: translateY(20px);
-				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-			}
-
-			.case-study-overlay.visible .case-study-panel {
-				transform: translateY(0);
-			}
-
-			.case-study-sidebar {
-				width: 220px;
-				padding: 32px 24px;
-				border-right: 1px solid #eee;
-				flex-shrink: 0;
-			}
-
-			.case-study-back {
-				display: inline-flex;
-				align-items: center;
-				gap: 6px;
-				font-size: 13px;
-				font-weight: 500;
-				color: #1a1a1a;
-				text-decoration: none;
-				cursor: pointer;
-				margin-bottom: 32px;
-				transition: color 0.2s ease;
-			}
-
-			.case-study-back:hover { color: #ff6b35; }
-
-			.case-study-nav {
-				list-style: none;
-				display: flex;
-				flex-direction: column;
-				gap: 8px;
-			}
-
-			.case-study-nav li {
-				font-size: 13px;
-				color: #999;
-				cursor: pointer;
-				padding: 4px 0;
-				transition: color 0.2s ease;
-			}
-
-			.case-study-nav li:hover { color: #1a1a1a; }
-			.case-study-nav li.active { color: #1a1a1a; font-weight: 500; }
-
-			.case-study-content {
-				flex: 1;
-				overflow-y: auto;
-				padding: 40px 60px;
-			}
-
-			.case-study-header-meta {
-				font-family: 'JetBrains Mono', monospace;
-				font-size: 11px;
-				color: #bbb;
-				letter-spacing: 0.04em;
-				margin-bottom: 12px;
-			}
-
-			.case-study-title {
-				font-family: 'Instrument Serif', Georgia, serif;
-				font-size: 42px;
-				font-weight: 400;
-				line-height: 1.15;
-				margin-bottom: 32px;
-			}
-
-			.case-study-hero {
-				width: 100%;
-				height: 280px;
-				border-radius: 16px;
-				margin-bottom: 40px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.case-study-hero-title {
-				font-family: 'Instrument Serif', Georgia, serif;
-				font-size: 32px;
-				color: #fff;
-				text-shadow: 0 2px 8px rgba(0,0,0,0.15);
-			}
-
-			.case-study-details {
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: 24px;
-				margin-bottom: 60px;
-				padding-bottom: 40px;
-				border-bottom: 1px solid #eee;
-			}
-
-			.detail-label {
-				font-family: 'JetBrains Mono', monospace;
-				font-size: 11px;
-				color: #bbb;
-				letter-spacing: 0.04em;
-				margin-bottom: 8px;
-			}
-
-			.detail-value {
-				font-size: 14px;
-				color: #1a1a1a;
-				line-height: 1.5;
-			}
-
-			.case-study-section {
-				margin-bottom: 48px;
-			}
-
-			.case-study-section-label {
-				font-family: 'JetBrains Mono', monospace;
-				font-size: 11px;
-				color: #bbb;
-				letter-spacing: 0.06em;
-				text-transform: uppercase;
-				margin-bottom: 12px;
-			}
-
-			.case-study-section h2 {
-				font-family: 'Instrument Serif', Georgia, serif;
-				font-size: 28px;
-				font-weight: 400;
-				line-height: 1.3;
-				margin-bottom: 16px;
-			}
-
-			.case-study-section p {
-				font-size: 15px;
-				color: #666;
-				line-height: 1.7;
-				max-width: 620px;
-			}
-
-			/* ── RACHELLM Drawer ── */
-			.drawer-overlay {
-				position: fixed;
-				top: 56px;
-				right: 0;
-				width: 380px;
-				height: calc(100% - 56px);
-				background: #fff;
-				border-left: 1px solid #eee;
-				z-index: 90;
-				transform: translateX(100%);
-				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-				display: flex;
-				flex-direction: column;
-			}
-
-			.drawer-overlay.open {
-				transform: translateX(0);
-			}
-
-			.drawer-header {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				padding: 16px 24px;
-				border-bottom: 1px solid #eee;
-				height: 56px;
-			}
-
-			.drawer-title {
-				font-family: 'JetBrains Mono', monospace;
-				font-size: 13px;
-				font-weight: 500;
-				display: flex;
-				align-items: center;
-				gap: 8px;
-			}
-
-			.drawer-title .info-icon {
-				width: 16px;
-				height: 16px;
-				border-radius: 50%;
-				border: 1.5px solid #ccc;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 10px;
-				color: #999;
-				cursor: help;
-			}
-
-			.drawer-actions {
-				display: flex;
-				align-items: center;
-				gap: 12px;
-			}
-
-			.drawer-toggle {
-				width: 36px;
-				height: 20px;
-				background: #ddd;
-				border-radius: 10px;
-				position: relative;
-				cursor: pointer;
-				transition: background 0.2s ease;
-			}
-
-			.drawer-toggle.on { background: #ff6b35; }
-
-			.drawer-toggle::after {
-				content: '';
-				position: absolute;
-				top: 2px;
-				left: 2px;
-				width: 16px;
-				height: 16px;
-				background: #fff;
-				border-radius: 50%;
-				transition: transform 0.2s ease;
-			}
-
-			.drawer-toggle.on::after {
-				transform: translateX(16px);
-			}
-
-			.drawer-close {
-				width: 28px;
-				height: 28px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				border: none;
-				background: none;
-				font-size: 18px;
-				color: #999;
-				cursor: pointer;
-				border-radius: 6px;
-				transition: background 0.2s ease, color 0.2s ease;
-			}
-
-			.drawer-close:hover {
-				background: #f5f5f5;
-				color: #1a1a1a;
-			}
-
-			.drawer-body {
-				flex: 1;
-				overflow-y: auto;
-				padding: 32px 24px;
-				display: flex;
-				flex-direction: column;
-			}
-
-			.drawer-suggestions {
-				margin-top: auto;
-			}
-
-			.drawer-suggestions h3 {
-				font-size: 16px;
-				font-weight: 500;
-				color: #1a1a1a;
-				margin-bottom: 16px;
-			}
-
-			.suggestion-item {
-				display: flex;
-				align-items: flex-start;
-				gap: 10px;
-				padding: 10px 0;
-				cursor: pointer;
-				transition: color 0.2s ease;
-				color: #666;
-				font-size: 14px;
-				line-height: 1.4;
-			}
-
-			.suggestion-item:hover { color: #1a1a1a; }
-
-			.suggestion-item .arrow-icon {
-				color: #ff6b35;
-				flex-shrink: 0;
-				margin-top: 2px;
-				font-size: 13px;
-			}
-
-			.drawer-input-area {
-				padding: 16px 24px;
-				border-top: 1px solid #eee;
-			}
-
-			.drawer-input-wrapper {
-				display: flex;
-				align-items: center;
-				gap: 10px;
-				padding: 10px 16px;
-				border: 1px solid #e0e0e0;
-				border-radius: 12px;
-				transition: border-color 0.2s ease;
-			}
-
-			.drawer-input-wrapper:focus-within {
-				border-color: #ff6b35;
-			}
-
-			.drawer-input {
-				flex: 1;
-				border: none;
-				outline: none;
-				font-family: 'Inter', sans-serif;
-				font-size: 14px;
-				color: #1a1a1a;
-				background: transparent;
-			}
-
-			.drawer-input::placeholder { color: #bbb; }
-
-			.drawer-send {
-				width: 28px;
-				height: 28px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				background: none;
-				border: none;
-				color: #ccc;
-				cursor: pointer;
-				border-radius: 6px;
-				transition: color 0.2s ease;
-			}
-
-			.drawer-send:hover { color: #ff6b35; }
-
-			/* ── Page sections for nav switching ── */
-			.page-section {
-				display: none;
-			}
-
-			.page-section.active {
-				display: block;
-			}
-
-			/* ── About Page ── */
-			.about-section {
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 80px 40px;
-			}
-
-			.about-section h1 {
-				font-family: 'Instrument Serif', Georgia, serif;
-				font-size: clamp(36px, 4vw, 52px);
-				font-weight: 400;
-				line-height: 1.15;
-				color: #1a1a1a;
-				margin-bottom: 32px;
-				max-width: 600px;
-			}
-
-			.about-section p {
-				font-size: 15px;
-				color: #666;
-				line-height: 1.7;
-				max-width: 500px;
-				margin-bottom: 16px;
-			}
-
-			.about-section ul {
-				list-style: disc;
-				padding-left: 20px;
-				margin-bottom: 16px;
-			}
-
-			.about-section li {
-				font-size: 15px;
-				color: #666;
-				line-height: 1.7;
-				padding: 2px 0;
-			}
-
-			.about-section a {
-				color: #1a1a1a;
-				font-weight: 600;
-				text-decoration: none;
-				border-bottom: 1px solid #1a1a1a;
-			}
-
-			.about-photos {
-				display: flex;
-				gap: 16px;
-				margin-top: 60px;
-				overflow-x: auto;
-				padding-bottom: 20px;
-			}
-
-			.about-photo {
-				width: 200px;
-				height: 260px;
-				background: #f0f0f0;
-				border-radius: 12px;
-				flex-shrink: 0;
-				overflow: hidden;
-			}
-
-			.about-photo-placeholder {
-				width: 100%;
-				height: 100%;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 32px;
-				opacity: 0.3;
-			}
-
-			/* ── Fun Page ── */
-			.fun-section {
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 80px 40px;
-			}
-
-			.fun-section h1 {
-				font-family: 'Instrument Serif', Georgia, serif;
-				font-size: clamp(36px, 4vw, 52px);
-				font-weight: 400;
-				line-height: 1.15;
-				color: #1a1a1a;
-				margin-bottom: 16px;
-				max-width: 680px;
-			}
-
-			.fun-section .fun-subtitle {
-				font-size: 15px;
-				color: #666;
-				line-height: 1.7;
-				max-width: 500px;
-				margin-bottom: 40px;
-			}
-
-			.fun-grid {
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				gap: 24px;
-			}
-
-			.fun-card {
-				border-radius: 16px;
-				overflow: hidden;
-				cursor: pointer;
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
-			}
-
-			.fun-card:hover {
-				transform: translateY(-4px);
-				box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-			}
-
-			.fun-card-img {
-				width: 100%;
-				padding-bottom: 120%;
-				position: relative;
-			}
-
-			.fun-card-img-inner {
-				position: absolute;
-				inset: 0;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 48px;
-				opacity: 0.2;
-			}
-
-			.fun-card-meta {
-				padding: 12px 4px 0;
-			}
-
-			.fun-card-title {
-				font-size: 15px;
-				color: #1a1a1a;
-				font-weight: 400;
-				margin-bottom: 4px;
-			}
-
-			.fun-card-info {
-				font-family: 'JetBrains Mono', monospace;
-				font-size: 11px;
-				color: #bbb;
-				letter-spacing: 0.04em;
-			}
-
-			/* ── Responsive ── */
-			@media (max-width: 768px) {
-				.nav { padding: 0 20px; }
-				.nav-links { gap: 16px; }
-				.nav-link { font-size: 11px; }
-				.hero { grid-template-columns: 1fr; padding: 60px 20px 20px; }
-				.projects { grid-template-columns: 1fr; padding: 20px 20px 60px; }
-				.main.drawer-open { margin-right: 0; }
-				.drawer-overlay { width: 100%; }
-				.fun-grid { grid-template-columns: 1fr; }
-				.case-study-sidebar { display: none; }
-				.case-study-content { padding: 24px; }
-				.case-study-details { grid-template-columns: repeat(2, 1fr); }
-			}
-		</style>
-	</head>
-	<body>
-		<!-- Navigation -->
-		<nav class="nav">
-			<div class="nav-logo">
-				<span class="dot"></span>
-				RACHEL CHEN
-				<span class="separator">·</span>
-				PRODUCT DESIGNER + ENGINEER
-			</div>
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/x-icon" href="/rc-favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Rachel Chen | Product Designer + Engineer</title>
+	<meta name="theme-color" content="#fafcfd" />
+	<style is:global>
+		@font-face {
+			font-family: 'Geist';
+			src: url('/fonts/geist-sans-latin.woff2') format('woff2');
+			font-weight: 100 900;
+			font-display: swap;
+		}
+		@font-face {
+			font-family: 'Geist Mono';
+			src: url('/fonts/geist-mono-latin.woff2') format('woff2');
+			font-weight: 100 900;
+			font-display: swap;
+		}
+		@font-face {
+			font-family: 'Crimson Pro';
+			src: url('/fonts/crimson-pro-latin.woff2') format('woff2');
+			font-weight: 200 900;
+			font-display: swap;
+		}
+		@font-face {
+			font-family: 'Crimson Pro';
+			src: url('/fonts/crimson-pro-italic-latin.woff2') format('woff2');
+			font-weight: 400;
+			font-style: italic;
+			font-display: swap;
+		}
+		@font-face {
+			font-family: 'tiemposText';
+			src: url('/fonts/tiempos-text.otf') format('opentype');
+			font-weight: 400;
+			font-display: swap;
+		}
+		@font-face {
+			font-family: 'tiemposText';
+			src: url('/fonts/tiempos-text-italic.otf') format('opentype');
+			font-weight: 400;
+			font-style: italic;
+			font-display: swap;
+		}
+
+		:root {
+			--primary: #e95a2c;
+			--foreground: #171717;
+			--muted: #a3a3a3;
+			--background: #fafcfd;
+			--border: rgba(23,23,23,0.1);
+			--font-sans: 'Geist', system-ui, sans-serif;
+			--font-mono: 'Geist Mono', monospace;
+			--font-serif: 'tiemposText', 'Crimson Pro', Georgia, serif;
+		}
+
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			font-family: var(--font-sans);
+			background: var(--background);
+			color: var(--foreground);
+			-webkit-font-smoothing: antialiased;
+			overflow-x: hidden;
+		}
+		a { color: inherit; text-decoration: none; }
+		img { display: block; max-width: 100%; height: auto; }
+		button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+		/* ─── NAV ─── */
+		.nav {
+			display: flex;
+			justify-content: center;
+			padding: 0 24px;
+			height: 64px;
+			align-items: center;
+			border-bottom: 1px solid var(--border);
+			position: sticky;
+			top: 0;
+			background: var(--background);
+			z-index: 100;
+		}
+		.nav-inner {
+			max-width: 1800px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			gap: 24px;
+		}
+		.nav-logo {
+			display: flex;
+			gap: 16px;
+			align-items: baseline;
+			flex-shrink: 0;
+		}
+		.nav-logo-name {
+			font-family: var(--font-sans);
+			font-size: 15px;
+			font-weight: 500;
+			color: var(--foreground);
+			white-space: nowrap;
+		}
+		.nav-logo-role {
+			font-family: var(--font-sans);
+			font-size: 15px;
+			color: var(--muted);
+			white-space: nowrap;
+		}
+		.nav-links {
+			display: flex;
+			gap: 32px;
+			align-items: center;
+			margin-left: auto;
+		}
+		.nav-link {
+			font-family: var(--font-sans);
+			font-size: 15px;
+			color: var(--muted);
+			cursor: pointer;
+			transition: color 0.2s;
+			white-space: nowrap;
+		}
+		.nav-link:hover { color: var(--primary); }
+		.nav-link.active { color: var(--primary); }
+		.rachellm-btn {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			font-family: var(--font-mono);
+			font-size: 15px;
+			color: var(--muted);
+			opacity: 0.5;
+			transition: opacity 0.2s, color 0.2s;
+			cursor: pointer;
+			padding: 8px;
+			border-radius: 999px;
+			margin-right: -8px;
+		}
+		.rachellm-btn:hover { opacity: 1; color: var(--primary); }
+		.rachellm-btn svg { flex-shrink: 0; }
+		.rachellm-label { text-transform: uppercase; font-size: 15px; }
+
+		/* ─── LAYOUT ─── */
+		.layout {
+			display: flex;
+			height: calc(100dvh - 64px);
+			overflow: hidden;
+		}
+		.main-scroll {
+			flex: 1;
+			overflow-y: auto;
+			transition: all 0.2s ease-in-out;
+		}
+		.page-content {
+			display: none;
+		}
+		.page-content.active {
+			display: block;
+		}
+
+		/* ─── WORK HERO ─── */
+		.work-hero {
+			display: flex;
+			padding: 0 24px;
+			gap: 24px;
+			max-width: 1800px;
+			margin: 0 auto;
+			min-height: calc(100vh - 120px);
+			align-items: flex-start;
+			padding-top: 80px;
+		}
+		.hero-left {
+			flex: 1;
+			max-width: 480px;
+		}
+		.hero-title {
+			font-family: var(--font-serif);
+			font-size: clamp(32px, 3.5vw, 44px);
+			font-weight: 400;
+			line-height: 1.2;
+			color: var(--foreground);
+			letter-spacing: -0.01em;
+		}
+		.hero-title em {
+			font-family: 'Crimson Pro', Georgia, serif;
+			font-style: italic;
+		}
+		.hero-right {
+			flex: 1;
+			padding-top: 12px;
+		}
+		.exp-row {
+			display: grid;
+			grid-template-columns: 48px 1fr 1fr;
+			gap: 12px;
+			padding: 6px 0;
+			font-size: 15px;
+			line-height: 1.5;
+		}
+		.exp-year { color: var(--muted); }
+		.exp-company { color: var(--foreground); font-weight: 500; }
+		.exp-role { color: var(--muted); }
+
+		/* ─── PROJECT GRID ─── */
+		.project-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 12px;
+			padding: 0 24px 80px;
+			max-width: 1800px;
+			margin: 0 auto;
+			margin-top: -200px;
+		}
+		.project-card {
+			position: relative;
+			border-radius: 12px;
+			overflow: hidden;
+			cursor: pointer;
+			border: 1px solid var(--border);
+			transition: transform 0.2s, box-shadow 0.2s;
+		}
+		.project-card:hover {
+			box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+		}
+		.card-visual {
+			position: relative;
+			aspect-ratio: 8/5;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.card-bg {
+			position: absolute;
+			inset: 0;
+		}
+		.card-title-overlay {
+			position: relative;
+			z-index: 1;
+			font-family: var(--font-serif);
+			font-size: clamp(20px, 2vw, 28px);
+			font-weight: 400;
+			color: #fff;
+			text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+			padding: 24px;
+			align-self: flex-end;
+			width: 100%;
+		}
+		.card-title-dark {
+			color: var(--foreground);
+			text-shadow: none;
+		}
+
+		/* Hover overlay */
+		.card-hover-overlay {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0;
+			z-index: 2;
+			transition: opacity 0.25s;
+		}
+		.project-card:hover .card-hover-overlay { opacity: 1; }
+		.view-btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			padding: 8px 16px;
+			background: var(--primary);
+			color: #fff;
+			border-radius: 999px;
+			font-family: var(--font-mono);
+			font-size: 12px;
+			font-weight: 500;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			transform: translateY(4px);
+			transition: transform 0.25s;
+		}
+		.project-card:hover .view-btn { transform: translateY(0); }
+
+		/* Card meta */
+		.card-meta {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			padding: 10px 4px 0;
+			gap: 8px;
+		}
+		.card-subtitle {
+			font-size: 15px;
+			color: var(--foreground);
+		}
+		.card-info {
+			font-family: var(--font-mono);
+			font-size: 12px;
+			color: var(--muted);
+			letter-spacing: 0.02em;
+			white-space: nowrap;
+			flex-shrink: 0;
+		}
+
+		/* ─── OpenAI gradient ─── */
+		.grad-openai { background: linear-gradient(135deg, #f0a05a 0%, #e8937a 25%, #d9919e 50%, #c49cc8 75%, #b5a5d8 100%); }
+		.grad-poker { background: linear-gradient(160deg, #101c33 0%, #152447 50%, #1a3060 100%); }
+		.grad-alexa { background: linear-gradient(180deg, #0b1525 0%, #0e1e3a 50%, #142d55 100%); }
+		.grad-1pw { background: linear-gradient(135deg, #0c1628 0%, #111d35 50%, #1a2d52 100%); }
+		.grad-figma { background: linear-gradient(135deg, #fde4ea 0%, #f5c0d0 50%, #f09db5 100%); }
+		.grad-earth { background: linear-gradient(135deg, #e8e8ee 0%, #d8d8e5 50%, #c5c5db 100%); }
+
+		/* ─── Mockup components inside cards ─── */
+		.mockup-container { position: relative; z-index: 1; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+
+		/* PokerGPT: chat form */
+		.poker-mockup {
+			width: 280px;
+			background: #fff;
+			border-radius: 16px;
+			padding: 20px;
+			box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+			font-size: 13px;
+			color: #333;
+		}
+		.poker-mockup-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 16px;
+		}
+		.poker-mockup-header span { color: #666; }
+		.poker-template-btn {
+			font-size: 11px;
+			color: var(--primary);
+			border: 1px solid var(--primary);
+			border-radius: 6px;
+			padding: 4px 10px;
+			background: #fff;
+		}
+		.poker-field {
+			font-size: 12px;
+			line-height: 1.8;
+			color: #555;
+		}
+		.poker-field .placeholder { color: var(--primary); }
+		.poker-villain { margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; color: #999; font-size: 12px; }
+		.poker-send { text-align: right; margin-top: 8px; color: #ccc; }
+		.poker-send svg { display: inline-block; }
+
+		/* Alexa: wave + text */
+		.alexa-content {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			padding: 24px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			height: 100%;
+		}
+		.alexa-wave {
+			width: 100%;
+			height: 80px;
+			margin-bottom: 24px;
+		}
+		.alexa-wave svg { width: 100%; height: 100%; }
+		.alexa-text {
+			font-family: var(--font-serif);
+			font-size: 22px;
+			line-height: 1.3;
+		}
+		.alexa-text .cyan { color: #38bdf8; }
+		.alexa-text .white { color: rgba(255,255,255,0.7); }
+
+		/* 1Password: login form */
+		.pw-mockup {
+			width: 260px;
+			background: #fff;
+			border-radius: 16px;
+			padding: 20px;
+			box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+		}
+		.pw-label { font-size: 13px; color: #555; margin-bottom: 6px; }
+		.pw-field {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			padding: 10px 12px;
+			background: #f8f8f8;
+			border-radius: 10px;
+			margin-bottom: 14px;
+			font-size: 13px;
+			color: #333;
+		}
+		.pw-icon {
+			width: 22px; height: 22px;
+			background: #0066ff;
+			border-radius: 50%;
+			margin-left: auto;
+			flex-shrink: 0;
+		}
+		.pw-btn {
+			width: 100%;
+			padding: 11px;
+			background: #0066ff;
+			color: #fff;
+			border-radius: 10px;
+			font-size: 13px;
+			font-weight: 500;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+		}
+
+		/* ─── RACHELLM DRAWER ─── */
+		.drawer {
+			width: 0;
+			overflow: hidden;
+			border-left: 0px solid var(--border);
+			transition: width 0.3s ease, border-left-width 0.3s ease;
+			display: flex;
+			flex-direction: column;
+			flex-shrink: 0;
+			background: var(--background);
+		}
+		.drawer.open {
+			width: 360px;
+			border-left-width: 1px;
+		}
+		.drawer-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 14px 20px;
+			border-bottom: 1px solid var(--border);
+			min-height: 56px;
+			gap: 8px;
+		}
+		.drawer-title {
+			font-family: var(--font-mono);
+			font-size: 14px;
+			font-weight: 500;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			white-space: nowrap;
+		}
+		.drawer-info {
+			width: 16px; height: 16px;
+			border-radius: 50%;
+			border: 1.5px solid var(--muted);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 10px;
+			color: var(--muted);
+		}
+		.drawer-actions { display: flex; gap: 10px; align-items: center; }
+		.toggle {
+			width: 36px; height: 20px;
+			background: #ddd;
+			border-radius: 10px;
+			position: relative;
+			cursor: pointer;
+			transition: background 0.2s;
+		}
+		.toggle.on { background: var(--primary); }
+		.toggle::after {
+			content: '';
+			position: absolute;
+			top: 2px; left: 2px;
+			width: 16px; height: 16px;
+			background: #fff;
+			border-radius: 50%;
+			transition: transform 0.2s;
+		}
+		.toggle.on::after { transform: translateX(16px); }
+		.close-btn {
+			width: 28px; height: 28px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 18px;
+			color: var(--muted);
+			border-radius: 6px;
+			transition: background 0.2s, color 0.2s;
+		}
+		.close-btn:hover { background: #f0f0f0; color: var(--foreground); }
+		.drawer-body {
+			flex: 1;
+			overflow-y: auto;
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+		}
+		.drawer-suggestions { margin-top: auto; }
+		.drawer-suggestions h3 {
+			font-size: 16px;
+			font-weight: 500;
+			margin-bottom: 14px;
+		}
+		.suggestion {
+			display: flex;
+			gap: 10px;
+			padding: 8px 0;
+			cursor: pointer;
+			color: var(--muted);
+			font-size: 14px;
+			transition: color 0.2s;
+		}
+		.suggestion:hover { color: var(--foreground); }
+		.suggestion .arrow { color: var(--primary); flex-shrink: 0; }
+		.drawer-input-wrap {
+			padding: 14px 20px;
+			border-top: 1px solid var(--border);
+		}
+		.drawer-input-box {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			padding: 10px 14px;
+			border: 1px solid #e0e0e0;
+			border-radius: 10px;
+			transition: border-color 0.2s;
+		}
+		.drawer-input-box:focus-within { border-color: var(--primary); }
+		.drawer-input-box input {
+			flex: 1;
+			border: none;
+			outline: none;
+			font-family: var(--font-sans);
+			font-size: 14px;
+			background: transparent;
+			color: var(--foreground);
+		}
+		.drawer-input-box input::placeholder { color: #bbb; }
+		.send-btn { color: #ccc; display: flex; transition: color 0.2s; }
+		.send-btn:hover { color: var(--primary); }
+
+		/* ─── ABOUT ─── */
+		.about-wrap {
+			display: flex;
+			flex-direction: column;
+			padding: 0 24px;
+			gap: 12px;
+			max-width: 1800px;
+			margin: 0 auto;
+			padding-top: 48px;
+		}
+		.about-top {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 24px;
+		}
+		.about-title {
+			font-family: var(--font-serif);
+			font-size: clamp(32px, 3.5vw, 44px);
+			font-weight: 400;
+			line-height: 1.2;
+			max-width: 500px;
+		}
+		.about-body {
+			font-size: 15px;
+			line-height: 1.7;
+			color: #555;
+			max-width: 500px;
+		}
+		.about-body p { margin-bottom: 12px; }
+		.about-body a { color: var(--foreground); font-weight: 600; border-bottom: 1px solid var(--foreground); }
+		.about-body ul { list-style: disc; padding-left: 20px; margin-bottom: 12px; }
+		.about-body li { padding: 2px 0; }
+		.about-photos {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 6px;
+			padding: 48px 0 80px;
+		}
+		@media (min-width: 768px) {
+			.about-photos { grid-template-columns: repeat(6, 1fr); }
+		}
+		.about-photo {
+			aspect-ratio: 1;
+			border-radius: 10px;
+			overflow: hidden;
+			border: 1px solid var(--border);
+		}
+		.about-photo img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		/* ─── FUN ─── */
+		.fun-wrap {
+			padding: 48px 24px 80px;
+			max-width: 1800px;
+			margin: 0 auto;
+		}
+		.fun-title {
+			font-family: var(--font-serif);
+			font-size: clamp(32px, 3.5vw, 44px);
+			font-weight: 400;
+			line-height: 1.2;
+			max-width: 600px;
+			margin-bottom: 12px;
+		}
+		.fun-subtitle {
+			font-size: 15px;
+			color: #555;
+			line-height: 1.7;
+			max-width: 500px;
+			margin-bottom: 36px;
+		}
+		.fun-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 16px;
+		}
+		.fun-card {
+			border-radius: 12px;
+			overflow: hidden;
+			cursor: pointer;
+			transition: transform 0.2s, box-shadow 0.2s;
+			border: 1px solid var(--border);
+		}
+		.fun-card:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+		}
+		.fun-card-img {
+			aspect-ratio: 10/7;
+			overflow: hidden;
+			background: #f5f5f5;
+		}
+		.fun-card-img img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.fun-card-meta {
+			padding: 10px 4px 0;
+		}
+		.fun-card-title {
+			font-size: 15px;
+			color: var(--foreground);
+		}
+		.fun-card-info {
+			font-family: var(--font-mono);
+			font-size: 12px;
+			color: var(--muted);
+			letter-spacing: 0.02em;
+			margin-top: 2px;
+		}
+
+		/* ─── CASE STUDY ─── */
+		.cs-overlay {
+			position: fixed;
+			inset: 0;
+			z-index: 200;
+			display: flex;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.3s;
+		}
+		.cs-overlay.visible { opacity: 1; pointer-events: auto; }
+		.cs-backdrop {
+			position: absolute;
+			inset: 0;
+			background: rgba(0,0,0,0.25);
+			backdrop-filter: blur(2px);
+		}
+		.cs-panel {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background: var(--background);
+			display: flex;
+			overflow: hidden;
+			transform: translateY(12px);
+			transition: transform 0.3s ease;
+		}
+		.cs-overlay.visible .cs-panel { transform: translateY(0); }
+		.cs-sidebar {
+			width: 200px;
+			padding: 28px 20px;
+			border-right: 1px solid var(--border);
+			flex-shrink: 0;
+		}
+		.cs-back {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			font-size: 14px;
+			font-weight: 500;
+			cursor: pointer;
+			margin-bottom: 28px;
+			transition: color 0.2s;
+		}
+		.cs-back:hover { color: var(--primary); }
+		.cs-nav { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+		.cs-nav li {
+			font-size: 13px;
+			color: var(--muted);
+			cursor: pointer;
+			padding: 3px 0;
+			transition: color 0.2s;
+		}
+		.cs-nav li:hover { color: var(--foreground); }
+		.cs-nav li.active { color: var(--foreground); font-weight: 500; }
+		.cs-body {
+			flex: 1;
+			overflow-y: auto;
+			padding: 36px 48px;
+		}
+		.cs-meta-label {
+			font-family: var(--font-mono);
+			font-size: 12px;
+			color: var(--muted);
+			letter-spacing: 0.03em;
+			margin-bottom: 10px;
+		}
+		.cs-heading {
+			font-family: var(--font-serif);
+			font-size: 36px;
+			font-weight: 400;
+			line-height: 1.2;
+			margin-bottom: 28px;
+		}
+		.cs-hero {
+			width: 100%;
+			aspect-ratio: 16/7;
+			border-radius: 14px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 32px;
+		}
+		.cs-hero-title {
+			font-family: var(--font-serif);
+			font-size: 30px;
+			color: #fff;
+			text-shadow: 0 1px 6px rgba(0,0,0,0.12);
+		}
+		.cs-details {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 20px;
+			padding-bottom: 32px;
+			margin-bottom: 40px;
+			border-bottom: 1px solid var(--border);
+		}
+		.cs-detail-label {
+			font-family: var(--font-mono);
+			font-size: 11px;
+			color: var(--muted);
+			letter-spacing: 0.04em;
+			margin-bottom: 6px;
+		}
+		.cs-detail-value {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		.cs-section { margin-bottom: 40px; }
+		.cs-section h2 {
+			font-family: var(--font-serif);
+			font-size: 26px;
+			font-weight: 400;
+			line-height: 1.3;
+			margin-bottom: 12px;
+		}
+		.cs-section p {
+			font-size: 15px;
+			color: #666;
+			line-height: 1.7;
+			max-width: 580px;
+		}
+
+		/* ─── RESPONSIVE ─── */
+		@media (max-width: 1024px) {
+			.work-hero { flex-direction: column; min-height: auto; padding-top: 40px; gap: 24px; }
+			.hero-left { max-width: 100%; }
+			.project-grid { margin-top: 24px; }
+		}
+		@media (max-width: 768px) {
+			.nav-inner { flex-wrap: wrap; }
+			.project-grid { grid-template-columns: 1fr; }
+			.fun-grid { grid-template-columns: 1fr; }
+			.about-top { grid-template-columns: 1fr; }
+			.drawer.open { width: 100%; position: fixed; inset: 0; z-index: 200; }
+			.cs-sidebar { display: none; }
+			.cs-body { padding: 20px; }
+			.cs-details { grid-template-columns: 1fr 1fr; }
+		}
+	</style>
+</head>
+<body>
+
+	<!-- NAV -->
+	<nav class="nav">
+		<div class="nav-inner">
+			<a class="nav-logo" href="/social-post">
+				<span class="nav-logo-name">Rachel Chen</span>
+				<span class="nav-logo-role">Product Designer + Engineer</span>
+			</a>
 			<div class="nav-links">
 				<a class="nav-link active" data-page="work">Work</a>
 				<a class="nav-link" data-page="fun">Fun</a>
 				<a class="nav-link" data-page="about">About</a>
-				<a class="nav-link" data-page="resume">Resume</a>
-				<a class="nav-link rachellm" id="rachellm-toggle">
-					<span class="star">✦</span> RachelLM
-				</a>
+				<a class="nav-link" data-page="resume" href="/Rachel_Chen_Resume.pdf" target="_blank" rel="noopener">Resume</a>
 			</div>
-		</nav>
+			<button class="rachellm-btn" id="rachellm-toggle" aria-label="Open AI chat">
+				<svg width="16" height="16" viewBox="0 0 30 30" fill="none"><path d="M14.5231 29.2759C12.6685 22.5706 7.42938 17.3315 0.724097 15.4769C0.240255 15.3431 0.240255 14.657 0.724097 14.5231C7.42938 12.6685 12.6685 7.42939 14.5231 0.724099C14.6569 0.240257 15.343 0.240257 15.4769 0.724099C17.3315 7.42939 22.5706 12.6685 29.2759 14.5231C29.7597 14.657 29.7597 15.343 29.2759 15.4769C22.5706 17.3315 17.3315 22.5706 15.4769 29.2759C15.343 29.7597 14.657 29.7597 14.5231 29.2759Z" fill="currentColor"></path></svg>
+				<span class="rachellm-label">RacheLLM</span>
+			</button>
+		</div>
+	</nav>
 
-		<!-- Main Content -->
-		<div class="main" id="main-content">
+	<!-- MAIN LAYOUT -->
+	<div class="layout">
+		<div class="main-scroll" id="main-scroll">
 
-			<!-- WORK page -->
-			<div class="page-section active" id="page-work">
-				<div class="hero">
-					<div class="hero-text">
-						<h1>I'm Rachel, a product designer who <em>engineers.</em></h1>
+			<!-- WORK -->
+			<div class="page-content active" id="page-work">
+				<div class="work-hero">
+					<div class="hero-left">
+						<h1 class="hero-title">I'm Rachel, a product designer who <em>engineers.</em></h1>
 					</div>
-					<div class="timeline">
-						{experiences.map((exp) => (
-							<div class="timeline-entry">
-								<span class="timeline-year">{exp.year}</span>
-								<span class="timeline-company">{exp.company}</span>
-								<span class="timeline-role">{exp.role}</span>
+					<div class="hero-right">
+						{experiences.map(e => (
+							<div class="exp-row">
+								<span class="exp-year">{e.year}</span>
+								<span class="exp-company">{e.company}</span>
+								<span class="exp-role">{e.role}</span>
 							</div>
 						))}
 					</div>
 				</div>
 
-				<div class="projects">
-					{projects.map((project, idx) => (
-						<div class={`project-card ${project.lightText ? '' : 'dark-text'}`} data-project-index={idx}>
-							<div class="project-card-inner">
-								<div class="project-card-bg" style={`background: ${project.gradient};`}></div>
-								<div class="project-card-content">
-									{project.mockup === 'poker' && (
-										<div class="project-mockup">
-											<div class="mockup-poker">
-												<div class="line"></div>
-												<div class="line"></div>
-												<div class="line"></div>
-												<div class="line"></div>
-												<div class="send-btn"></div>
-											</div>
-										</div>
-									)}
-									{project.mockup === '1password' && (
-										<div class="project-mockup">
-											<div class="mockup-1password">
-												<div class="field-label">Username</div>
-												<div class="field">
-													<span>jeff@1password.com</span>
-													<div class="icon"></div>
-												</div>
-												<div class="passkey-btn">Sign in with passkey</div>
-											</div>
-										</div>
-									)}
-									{project.mockup === 'alexa' && (
-										<div class="mockup-alexa">
-											<div class="wave">
-												<svg viewBox="0 0 400 60" preserveAspectRatio="none">
-													<path d="M0,30 Q50,0 100,30 T200,30 T300,30 T400,30" fill="none" stroke="rgba(100,200,255,0.6)" stroke-width="2" />
-													<path d="M0,30 Q50,10 100,30 T200,30 T300,30 T400,30" fill="none" stroke="rgba(100,200,255,0.4)" stroke-width="1.5" />
-													<path d="M0,30 Q50,20 100,30 T200,30 T300,30 T400,30" fill="none" stroke="rgba(100,200,255,0.3)" stroke-width="1" />
-												</svg>
-											</div>
-										</div>
-									)}
-									<span class="project-card-title">{project.title}</span>
-								</div>
-								<div class="project-card-overlay">
-									<a class="view-btn" data-project-index={idx}>
-										⊕ VIEW {project.type === 'case-study' ? 'CASE STUDY' : project.type === 'overview' ? 'OVERVIEW' : 'WEBSITE'}
-										<span class="arrow">→</span>
-									</a>
-								</div>
-							</div>
-							<div class="project-card-meta">
-								<span class="project-card-subtitle">{project.subtitle}</span>
-								<span class="project-card-info">{project.meta}</span>
-							</div>
+				<div class="project-grid">
+					<!-- OpenAI x Hardware -->
+					<div class="project-card" data-idx="0">
+						<div class="card-visual">
+							<div class="card-bg grad-openai"></div>
+							<div class="card-title-overlay">OpenAI x Hardware</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW CASE STUDY →</span></div>
 						</div>
-					))}
-				</div>
-			</div>
+						<div class="card-meta">
+							<span class="card-subtitle">The future of AI & hardware</span>
+							<span class="card-info">OPENAI X HARDWARE · CONCEPT 2025</span>
+						</div>
+					</div>
 
-			<!-- FUN page -->
-			<div class="page-section" id="page-fun">
-				<div class="fun-section">
-					<h1>I lose sleep to hackathons, design sprints, & silly little side quests.</h1>
-					<p class="fun-subtitle">Design is my passion, but I make time to code cool things and artificialize intelligence. Currently building design communities and tinkering with chrome extensions.</p>
-					<div class="fun-grid">
-						<div class="fun-card">
-							<div class="fun-card-img" style="background: #f5e6f0;">
-								<div class="fun-card-img-inner">🎬</div>
+					<!-- PokerGPT -->
+					<div class="project-card" data-idx="1">
+						<div class="card-visual">
+							<div class="card-bg grad-poker"></div>
+							<div class="mockup-container">
+								<div class="poker-mockup">
+									<div class="poker-mockup-header">
+										<span>Start by writing your hand history.</span>
+										<span class="poker-template-btn">Use Hand History Template</span>
+									</div>
+									<div class="poker-field">
+										Pre-flop action: UTG open, I call in SB<br/>
+										Flop: <span class="placeholder">[ Enter the flop e.g. KcQhTd ]</span><br/>
+										Flop action: <span class="placeholder">[ Action including bet sizes in BB ]</span><br/>
+										Turn: <span class="placeholder">[ e.g. 5d ]</span><br/>
+										Turn action: <span class="placeholder">[ Action including bet sizes in BB ]</span>
+									</div>
+									<div class="poker-villain">Villain player type: <span class="placeholder">[ eg. Tight Aggressive Recreational]</span></div>
+									<div class="poker-send"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M14 2L7 9M14 2L9.5 14L7 9M14 2L2 6.5L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+								</div>
 							</div>
-							<div class="fun-card-meta">
-								<div class="fun-card-title">Eye tracking for everyone</div>
-								<div class="fun-card-info">TREEHACKS · HACKATHON</div>
-							</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW CASE STUDY →</span></div>
 						</div>
-						<div class="fun-card">
-							<div class="fun-card-img" style="background: #e8d5f5;">
-								<div class="fun-card-img-inner">📦</div>
-							</div>
-							<div class="fun-card-meta">
-								<div class="fun-card-title">Making hacking for everyone</div>
-								<div class="fun-card-info">HACK WESTERN 12 · HACKATHON</div>
-							</div>
+						<div class="card-meta">
+							<span class="card-subtitle">The world's first AI poker coach</span>
+							<span class="card-info">POKERGPT · SHIPPED 2023</span>
 						</div>
-						<div class="fun-card">
-							<div class="fun-card-img" style="background: #e0e0e0;">
-								<div class="fun-card-img-inner">👓</div>
+					</div>
+
+					<!-- Alexa -->
+					<div class="project-card" data-idx="2">
+						<div class="card-visual">
+							<div class="card-bg grad-alexa"></div>
+							<div class="alexa-content">
+								<div class="alexa-wave">
+									<svg viewBox="0 0 600 80" preserveAspectRatio="none">
+										<defs><linearGradient id="wg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1e3a5f"/><stop offset="0.3" stop-color="#38bdf8"/><stop offset="0.5" stop-color="#7dd3fc"/><stop offset="0.7" stop-color="#38bdf8"/><stop offset="1" stop-color="#1e3a5f"/></linearGradient></defs>
+										<path d="M0,40 C50,20 100,60 150,40 S250,20 300,40 S400,60 450,40 S550,20 600,40" fill="none" stroke="url(#wg)" stroke-width="2.5" opacity="0.8"/>
+										<path d="M0,40 C50,30 100,50 150,40 S250,30 300,40 S400,50 450,40 S550,30 600,40" fill="none" stroke="url(#wg)" stroke-width="1.5" opacity="0.5"/>
+										<path d="M0,40 C50,35 100,45 150,40 S250,35 300,40 S400,45 450,40 S550,35 600,40" fill="none" stroke="url(#wg)" stroke-width="1" opacity="0.3"/>
+									</svg>
+								</div>
+								<div class="alexa-text">
+									<span class="cyan">'Alexa,</span> <span class="white">get me a recipe for crab benedict'</span>
+								</div>
 							</div>
-							<div class="fun-card-meta">
-								<div class="fun-card-title">Smart glasses prototype</div>
-								<div class="fun-card-info">INDUSTRIAL DESIGN · 2024</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW OVERVIEW →</span></div>
+						</div>
+						<div class="card-meta">
+							<span class="card-subtitle">Novel consumer AI experiences</span>
+							<span class="card-info">AMAZON ALEXA+ · CONTRACT 2025</span>
+						</div>
+					</div>
+
+					<!-- 1Password -->
+					<div class="project-card" data-idx="3">
+						<div class="card-visual">
+							<div class="card-bg grad-1pw"></div>
+							<div class="mockup-container">
+								<div class="pw-mockup">
+									<div class="pw-label">Username</div>
+									<div class="pw-field">jeff@1password.com <div class="pw-icon"></div></div>
+									<div class="pw-btn">
+										<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="#fff" stroke-width="2"/></svg>
+										Sign in with passkey
+									</div>
+								</div>
 							</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW CASE STUDY →</span></div>
+						</div>
+						<div class="card-meta">
+							<span class="card-subtitle">Bringing autofill to macOS</span>
+							<span class="card-info">1PASSWORD · SHIPPED 2025</span>
+						</div>
+					</div>
+
+					<!-- Figma -->
+					<div class="project-card" data-idx="4">
+						<div class="card-visual">
+							<div class="card-bg grad-figma"></div>
+							<div class="card-title-overlay card-title-dark">Figma</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW CASE STUDY →</span></div>
+						</div>
+						<div class="card-meta">
+							<span class="card-subtitle">Mobile-first for Figma</span>
+							<span class="card-info">FIGMA · CONCEPT 2025</span>
+						</div>
+					</div>
+
+					<!-- Google Earth -->
+					<div class="project-card" data-idx="5">
+						<div class="card-visual">
+							<div class="card-bg grad-earth"></div>
+							<div class="card-title-overlay card-title-dark">Google Earth</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW OVERVIEW →</span></div>
+						</div>
+						<div class="card-meta">
+							<span class="card-subtitle">Redesigning exploration</span>
+							<span class="card-info">GOOGLE EARTH · CONCEPT 2024</span>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<!-- ABOUT page -->
-			<div class="page-section" id="page-about">
-				<div class="about-section">
-					<h1>I'm a designer, builder, & dancer—always seeking new adventures.</h1>
-					<p>I think deeply about people, products, and the future of technology. Currently rabbit-holing into the world of human-AI interaction.</p>
-					<p>Open to contract and freelance opportunities. If you're working on something cool, <a href="#">let's chat!</a></p>
-					<p>Outside of design, engineering, and being a comp sci + business student, I'm:</p>
-					<ul>
-						<li>leading student clubs in the tech space</li>
-						<li>searching for food</li>
-						<li>flashing V4's</li>
-						<li>dancing, dancing, & dancing</li>
-					</ul>
-					<p>To befriend me or hire me, reach out on <a href="#">LinkedIn</a>, <a href="#">X</a>, or by <a href="#">email</a>—can't wait to meet you!</p>
+			<!-- FUN -->
+			<div class="page-content" id="page-fun">
+				<div class="fun-wrap">
+					<h1 class="fun-title">I lose sleep to hackathons, design sprints, & silly little side quests.</h1>
+					<p class="fun-subtitle">Design is my passion, but I make time to code cool things and artificialize intelligence. Currently building design communities and tinkering with chrome extensions.</p>
+					<div class="fun-grid">
+						{funProjects.map(p => (
+							<div class="fun-card">
+								<div class="fun-card-img"><img src={p.img} alt={p.title} loading="lazy" /></div>
+								<div class="fun-card-meta">
+									<div class="fun-card-title">{p.title}</div>
+									<div class="fun-card-info">{p.meta}</div>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<!-- ABOUT -->
+			<div class="page-content" id="page-about">
+				<div class="about-wrap">
+					<div class="about-top">
+						<div>
+							<h1 class="about-title">I'm a designer, builder, & dancer—always seeking new adventures.</h1>
+						</div>
+						<div></div>
+					</div>
+					<div class="about-body">
+						<p>I think deeply about people, products, and the future of technology. Currently rabbit-holing into the world of human-AI interaction.</p>
+						<p>Open to contract and freelance opportunities. If you're working on something cool, <a href="#">let's chat!</a></p>
+						<p>Outside of design, engineering, and being a comp sci + business student, I'm:</p>
+						<ul>
+							<li>leading student clubs in the tech space</li>
+							<li>searching for food</li>
+							<li>flashing V4's</li>
+							<li>dancing, dancing, & dancing</li>
+						</ul>
+						<p>To befriend me or hire me, reach out on <a href="#">LinkedIn</a>, <a href="#">X</a>, or by <a href="#">email</a>—can't wait to meet you!</p>
+					</div>
 					<div class="about-photos">
-						<div class="about-photo" style="background: linear-gradient(135deg, #fce4ec, #f8bbd0);">
-							<div class="about-photo-placeholder">🌅</div>
-						</div>
-						<div class="about-photo" style="background: linear-gradient(135deg, #e8eaf6, #c5cae9);">
-							<div class="about-photo-placeholder">🎭</div>
-						</div>
-						<div class="about-photo" style="background: linear-gradient(135deg, #e0f2f1, #b2dfdb);">
-							<div class="about-photo-placeholder">🏔️</div>
-						</div>
-						<div class="about-photo" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2);">
-							<div class="about-photo-placeholder">💃</div>
-						</div>
-						<div class="about-photo" style="background: linear-gradient(135deg, #f3e5f5, #ce93d8);">
-							<div class="about-photo-placeholder">🌊</div>
-						</div>
-						<div class="about-photo" style="background: linear-gradient(135deg, #e8f5e9, #a5d6a7);">
-							<div class="about-photo-placeholder">🧗</div>
-						</div>
+						<div class="about-photo"><img src="/about/about1.jpg" alt="About image 1" loading="lazy" /></div>
+						<div class="about-photo"><img src="/about/about2.jpg" alt="About image 2" loading="lazy" /></div>
+						<div class="about-photo"><img src="/about/about3.jpg" alt="About image 3" loading="lazy" /></div>
+						<div class="about-photo"><img src="/about/about4.jpg" alt="About image 4" loading="lazy" /></div>
+						<div class="about-photo"><img src="/about/about5.jpg" alt="About image 5" loading="lazy" /></div>
+						<div class="about-photo"><img src="/about/about6.jpg" alt="About image 6" loading="lazy" /></div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- RACHELLM Drawer -->
-		<div class="drawer-overlay" id="rachellm-drawer">
+		<!-- RACHELLM DRAWER -->
+		<div class="drawer" id="drawer">
 			<div class="drawer-header">
-				<div class="drawer-title">
-					RACHELLM
-					<span class="info-icon">i</span>
-				</div>
+				<div class="drawer-title">RACHELLM <span class="drawer-info">i</span></div>
 				<div class="drawer-actions">
-					<div class="drawer-toggle on" id="drawer-toggle"></div>
-					<button class="drawer-close" id="drawer-close">×</button>
+					<div class="toggle on" id="drawer-toggle"></div>
+					<button class="close-btn" id="drawer-close">×</button>
 				</div>
 			</div>
 			<div class="drawer-body">
 				<div class="drawer-suggestions">
 					<h3>What would you like to know?</h3>
-					{chatSuggestions.map((suggestion) => (
-						<div class="suggestion-item">
-							<span class="arrow-icon">↙</span>
-							<span>{suggestion}</span>
-						</div>
+					{chatSuggestions.map(s => (
+						<div class="suggestion"><span class="arrow">↙</span><span>{s}</span></div>
 					))}
 				</div>
 			</div>
-			<div class="drawer-input-area">
-				<div class="drawer-input-wrapper">
-					<input type="text" class="drawer-input" placeholder="Ask about Rachel..." />
-					<button class="drawer-send">
-						<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-							<path d="M14 2L7 9M14 2L9.5 14L7 9M14 2L2 6.5L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-					</button>
+			<div class="drawer-input-wrap">
+				<div class="drawer-input-box">
+					<input type="text" placeholder="Ask about Rachel..." />
+					<button class="send-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M14 2L7 9M14 2L9.5 14L7 9M14 2L2 6.5L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<!-- Case Study Overlay -->
-		<div class="case-study-overlay" id="case-study-overlay">
-			<div class="case-study-backdrop" id="case-study-backdrop"></div>
-			<div class="case-study-panel">
-				<div class="case-study-sidebar">
-					<a class="case-study-back" id="case-study-close">← BACK</a>
-					<ul class="case-study-nav">
-						<li class="active">Overview</li>
-						<li>Solution</li>
-						<li>Core Flows</li>
-						<li>Research</li>
-						<li>Exploring Form Factors</li>
-						<li>Prototyping and Testing</li>
-						<li>Design Decisions</li>
-						<li>Designing for Hardware Constraints</li>
-						<li>Reflection</li>
-					</ul>
-				</div>
-				<div class="case-study-content" id="case-study-content">
-					<!-- Content populated via JS -->
-				</div>
+	<!-- CASE STUDY OVERLAY -->
+	<div class="cs-overlay" id="cs-overlay">
+		<div class="cs-backdrop" id="cs-backdrop"></div>
+		<div class="cs-panel">
+			<div class="cs-sidebar">
+				<a class="cs-back" id="cs-close">← BACK</a>
+				<ul class="cs-nav">
+					<li class="active">Overview</li>
+					<li>Solution</li>
+					<li>Core Flows</li>
+					<li>Research</li>
+					<li>Exploring Form Factors</li>
+					<li>Prototyping and Testing</li>
+					<li>Design Decisions</li>
+					<li>Reflection</li>
+				</ul>
 			</div>
+			<div class="cs-body" id="cs-body"></div>
 		</div>
+	</div>
 
-		<script>
-			// Navigation switching
-			document.querySelectorAll('.nav-link[data-page]').forEach(link => {
-				link.addEventListener('click', () => {
-					const page = link.dataset.page;
-					if (page === 'resume') return;
+	<script define:vars={{ projects: JSON.stringify(projects) }}>
+		const projectData = JSON.parse(projects);
+		const grads = ['grad-openai','grad-poker','grad-alexa','grad-1pw','grad-figma','grad-earth'];
 
-					document.querySelectorAll('.nav-link[data-page]').forEach(l => l.classList.remove('active'));
-					link.classList.add('active');
-
-					document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-					const target = document.getElementById(`page-${page}`);
-					if (target) target.classList.add('active');
-				});
+		// Nav
+		document.querySelectorAll('.nav-link[data-page]').forEach(l => {
+			l.addEventListener('click', e => {
+				const page = l.dataset.page;
+				if (page === 'resume') return;
+				e.preventDefault();
+				document.querySelectorAll('.nav-link[data-page]').forEach(x => x.classList.remove('active'));
+				l.classList.add('active');
+				document.querySelectorAll('.page-content').forEach(s => s.classList.remove('active'));
+				document.getElementById('page-' + page)?.classList.add('active');
+				document.getElementById('main-scroll').scrollTop = 0;
 			});
+		});
 
-			// RACHELLM drawer
-			const drawer = document.getElementById('rachellm-drawer');
-			const mainContent = document.getElementById('main-content');
-			const toggleBtn = document.getElementById('rachellm-toggle');
-			const closeBtn = document.getElementById('drawer-close');
-			const drawerToggle = document.getElementById('drawer-toggle');
+		// Drawer
+		const drawer = document.getElementById('drawer');
+		let drawerOpen = false;
+		document.getElementById('rachellm-toggle').addEventListener('click', () => {
+			drawerOpen = !drawerOpen;
+			drawer.classList.toggle('open', drawerOpen);
+		});
+		document.getElementById('drawer-close').addEventListener('click', () => {
+			drawerOpen = false;
+			drawer.classList.remove('open');
+		});
+		document.getElementById('drawer-toggle').addEventListener('click', function() {
+			this.classList.toggle('on');
+		});
 
-			let drawerOpen = false;
+		// Case study
+		function openCS(idx) {
+			const d = projectData[idx];
+			if (!d) return;
+			document.getElementById('cs-body').innerHTML = `
+				<div class="cs-meta-label">${d.meta}</div>
+				<h1 class="cs-heading">${d.subtitle}</h1>
+				<div class="cs-hero ${grads[idx]}"><span class="cs-hero-title">${d.title}</span></div>
+				<div class="cs-details">
+					<div><div class="cs-detail-label">ROLE</div><div class="cs-detail-value">${d.role}</div></div>
+					<div><div class="cs-detail-label">TIMELINE</div><div class="cs-detail-value">${d.timeline}</div></div>
+					<div><div class="cs-detail-label">TEAM</div><div class="cs-detail-value">${d.team}</div></div>
+					<div><div class="cs-detail-label">SKILLS</div><div class="cs-detail-value">${d.skills}</div></div>
+				</div>
+				<div class="cs-section">
+					<div class="cs-meta-label">OVERVIEW</div>
+					<h2>${d.overview}</h2>
+					<p>${d.body}</p>
+				</div>`;
+			document.getElementById('cs-overlay').classList.add('visible');
+		}
+		function closeCS() { document.getElementById('cs-overlay').classList.remove('visible'); }
 
-			function openDrawer() {
-				drawerOpen = true;
-				drawer.classList.add('open');
-				mainContent.classList.add('drawer-open');
-			}
+		document.querySelectorAll('.project-card').forEach(c => {
+			c.addEventListener('click', () => openCS(parseInt(c.dataset.idx)));
+		});
+		document.getElementById('cs-close').addEventListener('click', closeCS);
+		document.getElementById('cs-backdrop').addEventListener('click', closeCS);
+		document.addEventListener('keydown', e => {
+			if (e.key === 'Escape') { closeCS(); if (drawerOpen) { drawerOpen = false; drawer.classList.remove('open'); } }
+		});
 
-			function closeDrawer() {
-				drawerOpen = false;
-				drawer.classList.remove('open');
-				mainContent.classList.remove('drawer-open');
-			}
-
-			toggleBtn.addEventListener('click', () => {
-				if (drawerOpen) closeDrawer();
-				else openDrawer();
+		// Sidebar nav active
+		document.querySelectorAll('.cs-nav li').forEach(li => {
+			li.addEventListener('click', () => {
+				document.querySelectorAll('.cs-nav li').forEach(x => x.classList.remove('active'));
+				li.classList.add('active');
 			});
+		});
 
-			closeBtn.addEventListener('click', closeDrawer);
-
-			drawerToggle.addEventListener('click', () => {
-				drawerToggle.classList.toggle('on');
+		// Chat suggestion click
+		document.querySelectorAll('.suggestion').forEach(s => {
+			s.addEventListener('click', () => {
+				document.querySelector('.drawer-input-box input').value = s.querySelector('span:last-child').textContent;
 			});
-
-			// Case study data
-			const projectData = [
-				{
-					meta: 'OPENAI X HARDWARE · CONCEPT 2025',
-					title: 'The future of AI & hardware',
-					gradient: 'linear-gradient(135deg, #f4a261 0%, #e88d9e 40%, #c7a0d4 70%, #b8b0e0 100%)',
-					heroTitle: 'OpenAI x Hardware',
-					role: 'Lead Product Designer',
-					timeline: 'August – September 2025',
-					team: '3 Designers',
-					skills: 'Product Design\nProduct Strategy\nPrototyping',
-					overview: 'What should OpenAI build as their first AI device?',
-					body: 'We explored the intersection of AI and hardware, designing a wearable device concept called "Tomo" that integrates with ChatGPT\'s Moments feature. The goal was to create a personal AI companion that captures and remembers everyday moments, making AI feel more human and present in daily life.'
-				},
-				{
-					meta: 'POKERGPT · SHIPPED 2023',
-					title: 'The world\'s first AI poker coach',
-					gradient: 'linear-gradient(160deg, #0a1628 0%, #152447 50%, #1a3060 100%)',
-					heroTitle: 'PokerGPT',
-					role: 'Product Designer + Engineer',
-					timeline: '2023',
-					team: '2 People',
-					skills: 'Product Design\nFull-Stack Dev\nAI/ML',
-					overview: 'How might we make poker strategy accessible to everyone?',
-					body: 'PokerGPT is the world\'s first AI poker coach, designed to help players of all levels improve their game. By combining GPT with poker strategy knowledge, we created an intuitive tool that analyzes hand histories and provides personalized coaching advice.'
-				},
-				{
-					meta: 'AMAZON ALEXA+ · CONTRACT 2025',
-					title: 'Novel consumer AI experiences',
-					gradient: 'linear-gradient(180deg, #0a1628 0%, #0d1f3d 40%, #1a3a6a 100%)',
-					heroTitle: '\'Alexa,',
-					role: 'Contract Product Designer',
-					timeline: '2025',
-					team: 'Amazon Team',
-					skills: 'Product Design\nVoice UI\nPrototyping',
-					overview: 'Reimagining voice-first AI interactions for the home.',
-					body: 'Worked with Amazon\'s Alexa+ team to design novel consumer AI experiences. Focused on making voice interactions feel more natural and contextual, pushing the boundaries of what a smart home assistant can do.'
-				},
-				{
-					meta: '1PASSWORD · SHIPPED 2025',
-					title: 'Bringing autofill to macOS',
-					gradient: 'linear-gradient(135deg, #0a1628 0%, #111d35 50%, #1a2d52 100%)',
-					heroTitle: '1Password',
-					role: 'Product Design Intern',
-					timeline: 'Summer 2025',
-					team: '1Password Team',
-					skills: 'Product Design\nmacOS Native\nPrototyping',
-					overview: 'How do we bring seamless autofill to macOS applications?',
-					body: 'During my internship at 1Password, I shipped a new autofill experience for macOS that makes credential management seamless across native applications. The feature uses system-level APIs to provide a consistent, secure autofill experience.'
-				},
-				{
-					meta: 'FIGMA · CONCEPT 2025',
-					title: 'Mobile-first for Figma',
-					gradient: 'linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%)',
-					heroTitle: 'Figma Mobile-First',
-					role: 'Product Designer',
-					timeline: '2025',
-					team: 'Solo',
-					skills: 'Product Design\nMobile Design\nPrototyping',
-					overview: 'Designing "Live Comments" for mobile-first design feedback.',
-					body: 'Designed a concept for Figma\'s mobile experience, introducing "Live Comments" – a feature enabling asynchronous design feedback with voice annotations. Won a design challenge in NYC.'
-				},
-				{
-					meta: 'SIDE PROJECT · 2024',
-					title: 'Making meditation accessible',
-					gradient: 'linear-gradient(135deg, #e8eaf6 0%, #c5cae9 50%, #9fa8da 100%)',
-					heroTitle: 'Meditation Trainer',
-					role: 'Designer + Developer',
-					timeline: '2024',
-					team: 'Solo',
-					skills: 'Web Dev\nUI Design\nAnimation',
-					overview: 'A simple, beautiful meditation timer for beginners.',
-					body: 'Built a meditation training app that makes mindfulness accessible. Features a hold-to-meditate interaction pattern and soothing visual feedback to guide breathing exercises.'
-				}
-			];
-
-			// Open case study
-			document.querySelectorAll('.view-btn, .project-card').forEach(el => {
-				el.addEventListener('click', (e) => {
-					e.preventDefault();
-					e.stopPropagation();
-
-					const idx = parseInt(el.dataset.projectIndex ?? el.closest('.project-card')?.dataset.projectIndex);
-					if (isNaN(idx)) return;
-					const data = projectData[idx];
-					if (!data) return;
-
-					const content = document.getElementById('case-study-content');
-					content.innerHTML = `
-						<div class="case-study-header-meta">${data.meta}</div>
-						<h1 class="case-study-title">${data.title}</h1>
-						<div class="case-study-hero" style="background: ${data.gradient};">
-							<span class="case-study-hero-title">${data.heroTitle}</span>
-						</div>
-						<div class="case-study-details">
-							<div><div class="detail-label">ROLE</div><div class="detail-value">${data.role}</div></div>
-							<div><div class="detail-label">TIMELINE</div><div class="detail-value">${data.timeline}</div></div>
-							<div><div class="detail-label">TEAM</div><div class="detail-value">${data.team}</div></div>
-							<div><div class="detail-label">SKILLS</div><div class="detail-value">${data.skills.replace(/\n/g, '<br>')}</div></div>
-						</div>
-						<div class="case-study-section">
-							<div class="case-study-section-label">OVERVIEW</div>
-							<h2>${data.overview}</h2>
-							<p>${data.body}</p>
-						</div>
-					`;
-
-					const overlay = document.getElementById('case-study-overlay');
-					overlay.classList.add('visible');
-				});
-			});
-
-			// Close case study
-			function closeCaseStudy() {
-				document.getElementById('case-study-overlay').classList.remove('visible');
-			}
-
-			document.getElementById('case-study-close').addEventListener('click', closeCaseStudy);
-			document.getElementById('case-study-backdrop').addEventListener('click', closeCaseStudy);
-
-			document.addEventListener('keydown', (e) => {
-				if (e.key === 'Escape') {
-					closeCaseStudy();
-					if (drawerOpen) closeDrawer();
-				}
-			});
-
-			// Suggestion click simulated chat
-			document.querySelectorAll('.suggestion-item').forEach(item => {
-				item.addEventListener('click', () => {
-					const text = item.querySelector('span:last-child').textContent;
-					const input = document.querySelector('.drawer-input');
-					input.value = text;
-					input.focus();
-				});
-			});
-
-			// Sidebar nav active state
-			document.querySelectorAll('.case-study-nav li').forEach(li => {
-				li.addEventListener('click', () => {
-					document.querySelectorAll('.case-study-nav li').forEach(l => l.classList.remove('active'));
-					li.classList.add('active');
-				});
-			});
-		</script>
-	</body>
+		});
+	</script>
+</body>
 </html>
