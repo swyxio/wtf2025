@@ -8,5 +8,5 @@
 
 - [ ] Submission is from a notable, reputable source, not a personal plug, or I will be banned from contributing
 - [ ] Image added to `public/images/`
-- [ ] Entry added to `src/pages/index.astro` frontmatter
+- [ ] Chart `.md` file added to `src/data/charts/`
 - [ ] Source URL is publicly accessible
