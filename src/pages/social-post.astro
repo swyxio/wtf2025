@@ -214,6 +214,9 @@ const chatSuggestions = [
 			font-size: 15px;
 			color: var(--muted);
 			white-space: nowrap;
+			display: flex;
+			align-items: center;
+			gap: 0;
 		}
 		.nav-links {
 			display: flex;
@@ -221,6 +224,7 @@ const chatSuggestions = [
 			align-items: center;
 			margin-left: auto;
 		}
+		h4 { font-size: 15px; font-weight: 400; }
 		.nav-link {
 			font-family: var(--font-sans);
 			font-size: 15px;
@@ -274,9 +278,9 @@ const chatSuggestions = [
 			gap: 24px;
 			max-width: 1800px;
 			margin: 0 auto;
-			min-height: calc(100vh - 120px);
 			align-items: flex-start;
-			padding-top: 80px;
+			padding-top: 64px;
+			padding-bottom: 48px;
 		}
 		.hero-left {
 			flex: 1;
@@ -318,7 +322,6 @@ const chatSuggestions = [
 			padding: 0 24px 80px;
 			max-width: 1800px;
 			margin: 0 auto;
-			margin-top: -200px;
 		}
 		.project-card {
 			position: relative;
@@ -889,9 +892,8 @@ const chatSuggestions = [
 
 		/* ─── RESPONSIVE ─── */
 		@media (max-width: 1024px) {
-			.work-hero { flex-direction: column; min-height: auto; padding-top: 40px; gap: 24px; }
+			.work-hero { flex-direction: column; padding-top: 40px; gap: 24px; }
 			.hero-left { max-width: 100%; }
-			.project-grid { margin-top: 24px; }
 		}
 		@media (max-width: 768px) {
 			.nav-inner { flex-wrap: wrap; }
