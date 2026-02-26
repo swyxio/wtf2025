@@ -4,38 +4,33 @@ Live at **[https://wtfhappened2025.com/](https://wtfhappened2025.com/)**
 
 A curated collection of charts, screenshots, and visualizations documenting the wild developments in AI and tech throughout 2025.
 
-## 🚀 Project Structure
+## Adding a chart
 
-Inside of your Astro project, you'll see the following folders and files:
+1. Add your image to `public/images/`
+2. Create a new `.md` file in `src/data/charts/` with this format:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```markdown
+---
+order: 18
+url: "https://example.com/source-link"
+img: "/images/your-image.png"
+extraLinks:                              # optional
+  - url: "https://example.com/related"
+    label: "source name"
+---
+
+Short description of what the chart shows.
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Set `order` to control display position (check existing files for the current max).
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+## Commands
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm run build`           | Build your production site to `./dist/`          |
+| `pnpm run preview`         | Preview your build locally, before deploying     |
+| `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm run astro -- --help` | Get help using the Astro CLI                     |
