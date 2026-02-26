@@ -79,7 +79,7 @@ const chatSuggestions = [
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-		<style>
+		<style is:global>
 			* { margin: 0; padding: 0; box-sizing: border-box; }
 
 			body {
@@ -469,14 +469,15 @@ const chatSuggestions = [
 				position: fixed;
 				inset: 0;
 				z-index: 200;
-				display: none;
+				display: flex;
 				opacity: 0;
+				pointer-events: none;
 				transition: opacity 0.3s ease;
 			}
 
 			.case-study-overlay.visible {
-				display: flex;
 				opacity: 1;
+				pointer-events: auto;
 			}
 
 			.case-study-backdrop {
@@ -634,10 +635,10 @@ const chatSuggestions = [
 			/* ── RACHELLM Drawer ── */
 			.drawer-overlay {
 				position: fixed;
-				top: 0;
+				top: 56px;
 				right: 0;
 				width: 380px;
-				height: 100%;
+				height: calc(100% - 56px);
 				background: #fff;
 				border-left: 1px solid #eee;
 				z-index: 90;
@@ -1385,22 +1386,23 @@ const chatSuggestions = [
 					`;
 
 					const overlay = document.getElementById('case-study-overlay');
-					overlay.style.display = 'flex';
-					requestAnimationFrame(() => overlay.classList.add('visible'));
+					overlay.classList.add('visible');
 				});
 			});
 
 			// Close case study
-			document.getElementById('case-study-close').addEventListener('click', () => {
-				const overlay = document.getElementById('case-study-overlay');
-				overlay.classList.remove('visible');
-				setTimeout(() => { overlay.style.display = 'none'; }, 300);
-			});
+			function closeCaseStudy() {
+				document.getElementById('case-study-overlay').classList.remove('visible');
+			}
 
-			document.getElementById('case-study-backdrop').addEventListener('click', () => {
-				const overlay = document.getElementById('case-study-overlay');
-				overlay.classList.remove('visible');
-				setTimeout(() => { overlay.style.display = 'none'; }, 300);
+			document.getElementById('case-study-close').addEventListener('click', closeCaseStudy);
+			document.getElementById('case-study-backdrop').addEventListener('click', closeCaseStudy);
+
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Escape') {
+					closeCaseStudy();
+					if (drawerOpen) closeDrawer();
+				}
 			});
 
 			// Suggestion click simulated chat
