@@ -1,0 +1,1425 @@
+---
+const projects = [
+	{
+		title: "OpenAI x Hardware",
+		subtitle: "The future of AI & hardware",
+		meta: "OPENAI X HARDWARE · CONCEPT 2025",
+		gradient: "linear-gradient(135deg, #f4a261 0%, #e88d9e 40%, #c7a0d4 70%, #b8b0e0 100%)",
+		type: "case-study",
+		size: "large",
+	},
+	{
+		title: "PokerGPT",
+		subtitle: "The world's first AI poker coach",
+		meta: "POKERGPT · SHIPPED 2023",
+		gradient: "linear-gradient(160deg, #0a1628 0%, #152447 50%, #1a3060 100%)",
+		type: "case-study",
+		size: "large",
+		lightText: true,
+		mockup: "poker",
+	},
+	{
+		title: "'Alexa,",
+		subtitle: "Novel consumer AI experiences",
+		meta: "AMAZON ALEXA+ · CONTRACT 2025",
+		gradient: "linear-gradient(180deg, #0a1628 0%, #0d1f3d 40%, #1a3a6a 100%)",
+		type: "overview",
+		size: "large",
+		lightText: true,
+		mockup: "alexa",
+	},
+	{
+		title: "1Password",
+		subtitle: "Bringing autofill to macOS",
+		meta: "1PASSWORD · SHIPPED 2025",
+		gradient: "linear-gradient(135deg, #0a1628 0%, #111d35 50%, #1a2d52 100%)",
+		type: "case-study",
+		size: "large",
+		lightText: true,
+		mockup: "1password",
+	},
+	{
+		title: "Figma Mobile-First",
+		subtitle: "Mobile-first for Figma",
+		meta: "FIGMA · CONCEPT 2025",
+		gradient: "linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%)",
+		type: "case-study",
+		size: "small",
+	},
+	{
+		title: "Meditation Trainer",
+		subtitle: "Making meditation accessible",
+		meta: "SIDE PROJECT · 2024",
+		gradient: "linear-gradient(135deg, #e8eaf6 0%, #c5cae9 50%, #9fa8da 100%)",
+		type: "website",
+		size: "small",
+	},
+];
+
+const experiences = [
+	{ year: "2025", company: "Bloomberg", role: "Software Engineering Intern" },
+	{ year: "2025", company: "1Password", role: "Product Design Intern" },
+	{ year: "2024", company: "Royal Bank of Canada", role: "Software Engineering Intern" },
+	{ year: "2023", company: "Onova", role: "Product Design + Engineering Intern" },
+];
+
+const chatSuggestions = [
+	"What projects have you worked on?",
+	"Tell me about your design process",
+	"What was your experience at 1Password?",
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Rachel Chen | Product Designer + Engineer</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+		<style>
+			* { margin: 0; padding: 0; box-sizing: border-box; }
+
+			body {
+				background: #fff;
+				color: #1a1a1a;
+				font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+				min-height: 100vh;
+				overflow-x: hidden;
+			}
+
+			/* ── Navigation ── */
+			.nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 56px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0 40px;
+				background: rgba(255,255,255,0.92);
+				backdrop-filter: blur(12px);
+				-webkit-backdrop-filter: blur(12px);
+				border-bottom: 1px solid rgba(0,0,0,0.06);
+				z-index: 100;
+			}
+
+			.nav-logo {
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 13px;
+				font-weight: 500;
+				letter-spacing: 0.02em;
+				color: #1a1a1a;
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+
+			.nav-logo .dot {
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: #ff6b35;
+				display: inline-block;
+			}
+
+			.nav-logo span.separator {
+				color: #ccc;
+				font-weight: 300;
+			}
+
+			.nav-links {
+				display: flex;
+				align-items: center;
+				gap: 32px;
+			}
+
+			.nav-link {
+				font-family: 'Inter', sans-serif;
+				font-size: 13px;
+				font-weight: 500;
+				letter-spacing: 0.04em;
+				color: #999;
+				text-decoration: none;
+				cursor: pointer;
+				transition: color 0.2s ease;
+				text-transform: uppercase;
+			}
+
+			.nav-link:hover { color: #1a1a1a; }
+			.nav-link.active { color: #ff6b35; }
+
+			.nav-link.rachellm {
+				display: flex;
+				align-items: center;
+				gap: 6px;
+			}
+
+			.nav-link.rachellm .star {
+				color: #ff6b35;
+				font-size: 14px;
+			}
+
+			/* ── Main Content ── */
+			.main {
+				padding-top: 56px;
+				min-height: 100vh;
+				transition: margin-right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			.main.drawer-open {
+				margin-right: 380px;
+			}
+
+			/* ── Hero Section ── */
+			.hero {
+				padding: 80px 40px 40px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 40px;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.hero-text h1 {
+				font-family: 'Instrument Serif', Georgia, serif;
+				font-size: clamp(36px, 4vw, 52px);
+				font-weight: 400;
+				line-height: 1.15;
+				color: #1a1a1a;
+				letter-spacing: -0.01em;
+			}
+
+			.hero-text h1 em {
+				font-style: italic;
+			}
+
+			.timeline {
+				padding-top: 12px;
+			}
+
+			.timeline-entry {
+				display: grid;
+				grid-template-columns: 50px 1fr 1fr;
+				gap: 16px;
+				padding: 8px 0;
+				font-size: 14px;
+				align-items: baseline;
+			}
+
+			.timeline-year {
+				color: #bbb;
+				font-variant-numeric: tabular-nums;
+			}
+
+			.timeline-company {
+				color: #1a1a1a;
+				font-weight: 500;
+			}
+
+			.timeline-role {
+				color: #999;
+				font-size: 13px;
+			}
+
+			/* ── Project Grid ── */
+			.projects {
+				padding: 20px 40px 80px;
+				max-width: 1200px;
+				margin: 0 auto;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 24px;
+			}
+
+			.project-card {
+				position: relative;
+				border-radius: 16px;
+				overflow: hidden;
+				cursor: pointer;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.project-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+			}
+
+			.project-card-inner {
+				position: relative;
+				width: 100%;
+				padding-bottom: 70%;
+				overflow: hidden;
+			}
+
+			.project-card-bg {
+				position: absolute;
+				inset: 0;
+				transition: transform 0.4s ease;
+			}
+
+			.project-card:hover .project-card-bg {
+				transform: scale(1.03);
+			}
+
+			.project-card-content {
+				position: absolute;
+				inset: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				padding: 32px;
+			}
+
+			.project-card-title {
+				font-family: 'Instrument Serif', Georgia, serif;
+				font-size: 28px;
+				font-weight: 400;
+				color: #fff;
+				line-height: 1.2;
+				text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+			}
+
+			.project-card.dark-text .project-card-title {
+				color: #1a1a1a;
+				text-shadow: none;
+			}
+
+			/* Mockup illustrations */
+			.project-mockup {
+				position: absolute;
+				top: 50%;
+				right: 32px;
+				transform: translateY(-50%);
+			}
+
+			.mockup-poker {
+				width: 180px;
+				height: 180px;
+				background: rgba(255,255,255,0.12);
+				border-radius: 20px;
+				backdrop-filter: blur(8px);
+				display: flex;
+				flex-direction: column;
+				padding: 20px;
+				gap: 10px;
+			}
+
+			.mockup-poker .line {
+				height: 8px;
+				background: rgba(255,255,255,0.2);
+				border-radius: 4px;
+			}
+
+			.mockup-poker .line:nth-child(1) { width: 80%; }
+			.mockup-poker .line:nth-child(2) { width: 65%; background: rgba(107,79,187,0.5); }
+			.mockup-poker .line:nth-child(3) { width: 90%; }
+			.mockup-poker .line:nth-child(4) { width: 50%; background: rgba(107,79,187,0.5); }
+
+			.mockup-poker .send-btn {
+				margin-top: auto;
+				width: 32px;
+				height: 32px;
+				background: rgba(107,79,187,0.6);
+				border-radius: 50%;
+				align-self: flex-end;
+			}
+
+			.mockup-1password {
+				width: 200px;
+				background: rgba(255,255,255,0.95);
+				border-radius: 16px;
+				padding: 24px;
+				box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+			}
+
+			.mockup-1password .field-label {
+				font-size: 11px;
+				color: #666;
+				margin-bottom: 6px;
+			}
+
+			.mockup-1password .field {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				padding: 10px 14px;
+				background: #f5f5f5;
+				border-radius: 10px;
+				margin-bottom: 14px;
+			}
+
+			.mockup-1password .field span {
+				font-size: 12px;
+				color: #999;
+			}
+
+			.mockup-1password .field .icon {
+				width: 20px;
+				height: 20px;
+				background: #0066ff;
+				border-radius: 50%;
+				margin-left: auto;
+				flex-shrink: 0;
+			}
+
+			.mockup-1password .passkey-btn {
+				width: 100%;
+				padding: 10px;
+				background: #0066ff;
+				color: white;
+				border: none;
+				border-radius: 10px;
+				font-size: 12px;
+				font-weight: 500;
+				text-align: center;
+			}
+
+			.mockup-alexa {
+				position: absolute;
+				bottom: 40%;
+				left: 32px;
+				right: 32px;
+			}
+
+			.mockup-alexa .wave {
+				height: 60px;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.mockup-alexa .wave svg {
+				width: 100%;
+				height: 100%;
+			}
+
+			/* Hover overlay button */
+			.project-card-overlay {
+				position: absolute;
+				inset: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+
+			.project-card:hover .project-card-overlay {
+				opacity: 1;
+			}
+
+			.view-btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				padding: 10px 20px;
+				background: #ff6b35;
+				color: #fff;
+				border-radius: 24px;
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 11px;
+				font-weight: 500;
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+				text-decoration: none;
+				transform: translateY(8px);
+				transition: transform 0.3s ease;
+			}
+
+			.project-card:hover .view-btn {
+				transform: translateY(0);
+			}
+
+			.view-btn .arrow {
+				font-size: 14px;
+				transition: transform 0.2s ease;
+			}
+
+			.view-btn:hover .arrow {
+				transform: translateX(3px);
+			}
+
+			/* Project card meta below card */
+			.project-card-meta {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				padding: 12px 4px 0;
+			}
+
+			.project-card-subtitle {
+				font-size: 15px;
+				color: #1a1a1a;
+				font-weight: 400;
+			}
+
+			.project-card-info {
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 11px;
+				color: #bbb;
+				letter-spacing: 0.04em;
+			}
+
+			/* ── Case Study View ── */
+			.case-study-overlay {
+				position: fixed;
+				inset: 0;
+				z-index: 200;
+				display: none;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+
+			.case-study-overlay.visible {
+				display: flex;
+				opacity: 1;
+			}
+
+			.case-study-backdrop {
+				position: absolute;
+				inset: 0;
+				background: rgba(0,0,0,0.3);
+				backdrop-filter: blur(4px);
+			}
+
+			.case-study-panel {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				background: #fff;
+				display: flex;
+				overflow: hidden;
+				transform: translateY(20px);
+				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			.case-study-overlay.visible .case-study-panel {
+				transform: translateY(0);
+			}
+
+			.case-study-sidebar {
+				width: 220px;
+				padding: 32px 24px;
+				border-right: 1px solid #eee;
+				flex-shrink: 0;
+			}
+
+			.case-study-back {
+				display: inline-flex;
+				align-items: center;
+				gap: 6px;
+				font-size: 13px;
+				font-weight: 500;
+				color: #1a1a1a;
+				text-decoration: none;
+				cursor: pointer;
+				margin-bottom: 32px;
+				transition: color 0.2s ease;
+			}
+
+			.case-study-back:hover { color: #ff6b35; }
+
+			.case-study-nav {
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+			}
+
+			.case-study-nav li {
+				font-size: 13px;
+				color: #999;
+				cursor: pointer;
+				padding: 4px 0;
+				transition: color 0.2s ease;
+			}
+
+			.case-study-nav li:hover { color: #1a1a1a; }
+			.case-study-nav li.active { color: #1a1a1a; font-weight: 500; }
+
+			.case-study-content {
+				flex: 1;
+				overflow-y: auto;
+				padding: 40px 60px;
+			}
+
+			.case-study-header-meta {
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 11px;
+				color: #bbb;
+				letter-spacing: 0.04em;
+				margin-bottom: 12px;
+			}
+
+			.case-study-title {
+				font-family: 'Instrument Serif', Georgia, serif;
+				font-size: 42px;
+				font-weight: 400;
+				line-height: 1.15;
+				margin-bottom: 32px;
+			}
+
+			.case-study-hero {
+				width: 100%;
+				height: 280px;
+				border-radius: 16px;
+				margin-bottom: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.case-study-hero-title {
+				font-family: 'Instrument Serif', Georgia, serif;
+				font-size: 32px;
+				color: #fff;
+				text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+			}
+
+			.case-study-details {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 24px;
+				margin-bottom: 60px;
+				padding-bottom: 40px;
+				border-bottom: 1px solid #eee;
+			}
+
+			.detail-label {
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 11px;
+				color: #bbb;
+				letter-spacing: 0.04em;
+				margin-bottom: 8px;
+			}
+
+			.detail-value {
+				font-size: 14px;
+				color: #1a1a1a;
+				line-height: 1.5;
+			}
+
+			.case-study-section {
+				margin-bottom: 48px;
+			}
+
+			.case-study-section-label {
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 11px;
+				color: #bbb;
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+				margin-bottom: 12px;
+			}
+
+			.case-study-section h2 {
+				font-family: 'Instrument Serif', Georgia, serif;
+				font-size: 28px;
+				font-weight: 400;
+				line-height: 1.3;
+				margin-bottom: 16px;
+			}
+
+			.case-study-section p {
+				font-size: 15px;
+				color: #666;
+				line-height: 1.7;
+				max-width: 620px;
+			}
+
+			/* ── RACHELLM Drawer ── */
+			.drawer-overlay {
+				position: fixed;
+				top: 0;
+				right: 0;
+				width: 380px;
+				height: 100%;
+				background: #fff;
+				border-left: 1px solid #eee;
+				z-index: 90;
+				transform: translateX(100%);
+				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+				display: flex;
+				flex-direction: column;
+			}
+
+			.drawer-overlay.open {
+				transform: translateX(0);
+			}
+
+			.drawer-header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 16px 24px;
+				border-bottom: 1px solid #eee;
+				height: 56px;
+			}
+
+			.drawer-title {
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 13px;
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+
+			.drawer-title .info-icon {
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				border: 1.5px solid #ccc;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 10px;
+				color: #999;
+				cursor: help;
+			}
+
+			.drawer-actions {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+			}
+
+			.drawer-toggle {
+				width: 36px;
+				height: 20px;
+				background: #ddd;
+				border-radius: 10px;
+				position: relative;
+				cursor: pointer;
+				transition: background 0.2s ease;
+			}
+
+			.drawer-toggle.on { background: #ff6b35; }
+
+			.drawer-toggle::after {
+				content: '';
+				position: absolute;
+				top: 2px;
+				left: 2px;
+				width: 16px;
+				height: 16px;
+				background: #fff;
+				border-radius: 50%;
+				transition: transform 0.2s ease;
+			}
+
+			.drawer-toggle.on::after {
+				transform: translateX(16px);
+			}
+
+			.drawer-close {
+				width: 28px;
+				height: 28px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: none;
+				background: none;
+				font-size: 18px;
+				color: #999;
+				cursor: pointer;
+				border-radius: 6px;
+				transition: background 0.2s ease, color 0.2s ease;
+			}
+
+			.drawer-close:hover {
+				background: #f5f5f5;
+				color: #1a1a1a;
+			}
+
+			.drawer-body {
+				flex: 1;
+				overflow-y: auto;
+				padding: 32px 24px;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.drawer-suggestions {
+				margin-top: auto;
+			}
+
+			.drawer-suggestions h3 {
+				font-size: 16px;
+				font-weight: 500;
+				color: #1a1a1a;
+				margin-bottom: 16px;
+			}
+
+			.suggestion-item {
+				display: flex;
+				align-items: flex-start;
+				gap: 10px;
+				padding: 10px 0;
+				cursor: pointer;
+				transition: color 0.2s ease;
+				color: #666;
+				font-size: 14px;
+				line-height: 1.4;
+			}
+
+			.suggestion-item:hover { color: #1a1a1a; }
+
+			.suggestion-item .arrow-icon {
+				color: #ff6b35;
+				flex-shrink: 0;
+				margin-top: 2px;
+				font-size: 13px;
+			}
+
+			.drawer-input-area {
+				padding: 16px 24px;
+				border-top: 1px solid #eee;
+			}
+
+			.drawer-input-wrapper {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				padding: 10px 16px;
+				border: 1px solid #e0e0e0;
+				border-radius: 12px;
+				transition: border-color 0.2s ease;
+			}
+
+			.drawer-input-wrapper:focus-within {
+				border-color: #ff6b35;
+			}
+
+			.drawer-input {
+				flex: 1;
+				border: none;
+				outline: none;
+				font-family: 'Inter', sans-serif;
+				font-size: 14px;
+				color: #1a1a1a;
+				background: transparent;
+			}
+
+			.drawer-input::placeholder { color: #bbb; }
+
+			.drawer-send {
+				width: 28px;
+				height: 28px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: none;
+				border: none;
+				color: #ccc;
+				cursor: pointer;
+				border-radius: 6px;
+				transition: color 0.2s ease;
+			}
+
+			.drawer-send:hover { color: #ff6b35; }
+
+			/* ── Page sections for nav switching ── */
+			.page-section {
+				display: none;
+			}
+
+			.page-section.active {
+				display: block;
+			}
+
+			/* ── About Page ── */
+			.about-section {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 80px 40px;
+			}
+
+			.about-section h1 {
+				font-family: 'Instrument Serif', Georgia, serif;
+				font-size: clamp(36px, 4vw, 52px);
+				font-weight: 400;
+				line-height: 1.15;
+				color: #1a1a1a;
+				margin-bottom: 32px;
+				max-width: 600px;
+			}
+
+			.about-section p {
+				font-size: 15px;
+				color: #666;
+				line-height: 1.7;
+				max-width: 500px;
+				margin-bottom: 16px;
+			}
+
+			.about-section ul {
+				list-style: disc;
+				padding-left: 20px;
+				margin-bottom: 16px;
+			}
+
+			.about-section li {
+				font-size: 15px;
+				color: #666;
+				line-height: 1.7;
+				padding: 2px 0;
+			}
+
+			.about-section a {
+				color: #1a1a1a;
+				font-weight: 600;
+				text-decoration: none;
+				border-bottom: 1px solid #1a1a1a;
+			}
+
+			.about-photos {
+				display: flex;
+				gap: 16px;
+				margin-top: 60px;
+				overflow-x: auto;
+				padding-bottom: 20px;
+			}
+
+			.about-photo {
+				width: 200px;
+				height: 260px;
+				background: #f0f0f0;
+				border-radius: 12px;
+				flex-shrink: 0;
+				overflow: hidden;
+			}
+
+			.about-photo-placeholder {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 32px;
+				opacity: 0.3;
+			}
+
+			/* ── Fun Page ── */
+			.fun-section {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 80px 40px;
+			}
+
+			.fun-section h1 {
+				font-family: 'Instrument Serif', Georgia, serif;
+				font-size: clamp(36px, 4vw, 52px);
+				font-weight: 400;
+				line-height: 1.15;
+				color: #1a1a1a;
+				margin-bottom: 16px;
+				max-width: 680px;
+			}
+
+			.fun-section .fun-subtitle {
+				font-size: 15px;
+				color: #666;
+				line-height: 1.7;
+				max-width: 500px;
+				margin-bottom: 40px;
+			}
+
+			.fun-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 24px;
+			}
+
+			.fun-card {
+				border-radius: 16px;
+				overflow: hidden;
+				cursor: pointer;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.fun-card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+			}
+
+			.fun-card-img {
+				width: 100%;
+				padding-bottom: 120%;
+				position: relative;
+			}
+
+			.fun-card-img-inner {
+				position: absolute;
+				inset: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 48px;
+				opacity: 0.2;
+			}
+
+			.fun-card-meta {
+				padding: 12px 4px 0;
+			}
+
+			.fun-card-title {
+				font-size: 15px;
+				color: #1a1a1a;
+				font-weight: 400;
+				margin-bottom: 4px;
+			}
+
+			.fun-card-info {
+				font-family: 'JetBrains Mono', monospace;
+				font-size: 11px;
+				color: #bbb;
+				letter-spacing: 0.04em;
+			}
+
+			/* ── Responsive ── */
+			@media (max-width: 768px) {
+				.nav { padding: 0 20px; }
+				.nav-links { gap: 16px; }
+				.nav-link { font-size: 11px; }
+				.hero { grid-template-columns: 1fr; padding: 60px 20px 20px; }
+				.projects { grid-template-columns: 1fr; padding: 20px 20px 60px; }
+				.main.drawer-open { margin-right: 0; }
+				.drawer-overlay { width: 100%; }
+				.fun-grid { grid-template-columns: 1fr; }
+				.case-study-sidebar { display: none; }
+				.case-study-content { padding: 24px; }
+				.case-study-details { grid-template-columns: repeat(2, 1fr); }
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Navigation -->
+		<nav class="nav">
+			<div class="nav-logo">
+				<span class="dot"></span>
+				RACHEL CHEN
+				<span class="separator">·</span>
+				PRODUCT DESIGNER + ENGINEER
+			</div>
+			<div class="nav-links">
+				<a class="nav-link active" data-page="work">Work</a>
+				<a class="nav-link" data-page="fun">Fun</a>
+				<a class="nav-link" data-page="about">About</a>
+				<a class="nav-link" data-page="resume">Resume</a>
+				<a class="nav-link rachellm" id="rachellm-toggle">
+					<span class="star">✦</span> RachelLM
+				</a>
+			</div>
+		</nav>
+
+		<!-- Main Content -->
+		<div class="main" id="main-content">
+
+			<!-- WORK page -->
+			<div class="page-section active" id="page-work">
+				<div class="hero">
+					<div class="hero-text">
+						<h1>I'm Rachel, a product designer who <em>engineers.</em></h1>
+					</div>
+					<div class="timeline">
+						{experiences.map((exp) => (
+							<div class="timeline-entry">
+								<span class="timeline-year">{exp.year}</span>
+								<span class="timeline-company">{exp.company}</span>
+								<span class="timeline-role">{exp.role}</span>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<div class="projects">
+					{projects.map((project, idx) => (
+						<div class={`project-card ${project.lightText ? '' : 'dark-text'}`} data-project-index={idx}>
+							<div class="project-card-inner">
+								<div class="project-card-bg" style={`background: ${project.gradient};`}></div>
+								<div class="project-card-content">
+									{project.mockup === 'poker' && (
+										<div class="project-mockup">
+											<div class="mockup-poker">
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="line"></div>
+												<div class="send-btn"></div>
+											</div>
+										</div>
+									)}
+									{project.mockup === '1password' && (
+										<div class="project-mockup">
+											<div class="mockup-1password">
+												<div class="field-label">Username</div>
+												<div class="field">
+													<span>jeff@1password.com</span>
+													<div class="icon"></div>
+												</div>
+												<div class="passkey-btn">Sign in with passkey</div>
+											</div>
+										</div>
+									)}
+									{project.mockup === 'alexa' && (
+										<div class="mockup-alexa">
+											<div class="wave">
+												<svg viewBox="0 0 400 60" preserveAspectRatio="none">
+													<path d="M0,30 Q50,0 100,30 T200,30 T300,30 T400,30" fill="none" stroke="rgba(100,200,255,0.6)" stroke-width="2" />
+													<path d="M0,30 Q50,10 100,30 T200,30 T300,30 T400,30" fill="none" stroke="rgba(100,200,255,0.4)" stroke-width="1.5" />
+													<path d="M0,30 Q50,20 100,30 T200,30 T300,30 T400,30" fill="none" stroke="rgba(100,200,255,0.3)" stroke-width="1" />
+												</svg>
+											</div>
+										</div>
+									)}
+									<span class="project-card-title">{project.title}</span>
+								</div>
+								<div class="project-card-overlay">
+									<a class="view-btn" data-project-index={idx}>
+										⊕ VIEW {project.type === 'case-study' ? 'CASE STUDY' : project.type === 'overview' ? 'OVERVIEW' : 'WEBSITE'}
+										<span class="arrow">→</span>
+									</a>
+								</div>
+							</div>
+							<div class="project-card-meta">
+								<span class="project-card-subtitle">{project.subtitle}</span>
+								<span class="project-card-info">{project.meta}</span>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+
+			<!-- FUN page -->
+			<div class="page-section" id="page-fun">
+				<div class="fun-section">
+					<h1>I lose sleep to hackathons, design sprints, & silly little side quests.</h1>
+					<p class="fun-subtitle">Design is my passion, but I make time to code cool things and artificialize intelligence. Currently building design communities and tinkering with chrome extensions.</p>
+					<div class="fun-grid">
+						<div class="fun-card">
+							<div class="fun-card-img" style="background: #f5e6f0;">
+								<div class="fun-card-img-inner">🎬</div>
+							</div>
+							<div class="fun-card-meta">
+								<div class="fun-card-title">Eye tracking for everyone</div>
+								<div class="fun-card-info">TREEHACKS · HACKATHON</div>
+							</div>
+						</div>
+						<div class="fun-card">
+							<div class="fun-card-img" style="background: #e8d5f5;">
+								<div class="fun-card-img-inner">📦</div>
+							</div>
+							<div class="fun-card-meta">
+								<div class="fun-card-title">Making hacking for everyone</div>
+								<div class="fun-card-info">HACK WESTERN 12 · HACKATHON</div>
+							</div>
+						</div>
+						<div class="fun-card">
+							<div class="fun-card-img" style="background: #e0e0e0;">
+								<div class="fun-card-img-inner">👓</div>
+							</div>
+							<div class="fun-card-meta">
+								<div class="fun-card-title">Smart glasses prototype</div>
+								<div class="fun-card-info">INDUSTRIAL DESIGN · 2024</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ABOUT page -->
+			<div class="page-section" id="page-about">
+				<div class="about-section">
+					<h1>I'm a designer, builder, & dancer—always seeking new adventures.</h1>
+					<p>I think deeply about people, products, and the future of technology. Currently rabbit-holing into the world of human-AI interaction.</p>
+					<p>Open to contract and freelance opportunities. If you're working on something cool, <a href="#">let's chat!</a></p>
+					<p>Outside of design, engineering, and being a comp sci + business student, I'm:</p>
+					<ul>
+						<li>leading student clubs in the tech space</li>
+						<li>searching for food</li>
+						<li>flashing V4's</li>
+						<li>dancing, dancing, & dancing</li>
+					</ul>
+					<p>To befriend me or hire me, reach out on <a href="#">LinkedIn</a>, <a href="#">X</a>, or by <a href="#">email</a>—can't wait to meet you!</p>
+					<div class="about-photos">
+						<div class="about-photo" style="background: linear-gradient(135deg, #fce4ec, #f8bbd0);">
+							<div class="about-photo-placeholder">🌅</div>
+						</div>
+						<div class="about-photo" style="background: linear-gradient(135deg, #e8eaf6, #c5cae9);">
+							<div class="about-photo-placeholder">🎭</div>
+						</div>
+						<div class="about-photo" style="background: linear-gradient(135deg, #e0f2f1, #b2dfdb);">
+							<div class="about-photo-placeholder">🏔️</div>
+						</div>
+						<div class="about-photo" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2);">
+							<div class="about-photo-placeholder">💃</div>
+						</div>
+						<div class="about-photo" style="background: linear-gradient(135deg, #f3e5f5, #ce93d8);">
+							<div class="about-photo-placeholder">🌊</div>
+						</div>
+						<div class="about-photo" style="background: linear-gradient(135deg, #e8f5e9, #a5d6a7);">
+							<div class="about-photo-placeholder">🧗</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- RACHELLM Drawer -->
+		<div class="drawer-overlay" id="rachellm-drawer">
+			<div class="drawer-header">
+				<div class="drawer-title">
+					RACHELLM
+					<span class="info-icon">i</span>
+				</div>
+				<div class="drawer-actions">
+					<div class="drawer-toggle on" id="drawer-toggle"></div>
+					<button class="drawer-close" id="drawer-close">×</button>
+				</div>
+			</div>
+			<div class="drawer-body">
+				<div class="drawer-suggestions">
+					<h3>What would you like to know?</h3>
+					{chatSuggestions.map((suggestion) => (
+						<div class="suggestion-item">
+							<span class="arrow-icon">↙</span>
+							<span>{suggestion}</span>
+						</div>
+					))}
+				</div>
+			</div>
+			<div class="drawer-input-area">
+				<div class="drawer-input-wrapper">
+					<input type="text" class="drawer-input" placeholder="Ask about Rachel..." />
+					<button class="drawer-send">
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+							<path d="M14 2L7 9M14 2L9.5 14L7 9M14 2L2 6.5L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Case Study Overlay -->
+		<div class="case-study-overlay" id="case-study-overlay">
+			<div class="case-study-backdrop" id="case-study-backdrop"></div>
+			<div class="case-study-panel">
+				<div class="case-study-sidebar">
+					<a class="case-study-back" id="case-study-close">← BACK</a>
+					<ul class="case-study-nav">
+						<li class="active">Overview</li>
+						<li>Solution</li>
+						<li>Core Flows</li>
+						<li>Research</li>
+						<li>Exploring Form Factors</li>
+						<li>Prototyping and Testing</li>
+						<li>Design Decisions</li>
+						<li>Designing for Hardware Constraints</li>
+						<li>Reflection</li>
+					</ul>
+				</div>
+				<div class="case-study-content" id="case-study-content">
+					<!-- Content populated via JS -->
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Navigation switching
+			document.querySelectorAll('.nav-link[data-page]').forEach(link => {
+				link.addEventListener('click', () => {
+					const page = link.dataset.page;
+					if (page === 'resume') return;
+
+					document.querySelectorAll('.nav-link[data-page]').forEach(l => l.classList.remove('active'));
+					link.classList.add('active');
+
+					document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+					const target = document.getElementById(`page-${page}`);
+					if (target) target.classList.add('active');
+				});
+			});
+
+			// RACHELLM drawer
+			const drawer = document.getElementById('rachellm-drawer');
+			const mainContent = document.getElementById('main-content');
+			const toggleBtn = document.getElementById('rachellm-toggle');
+			const closeBtn = document.getElementById('drawer-close');
+			const drawerToggle = document.getElementById('drawer-toggle');
+
+			let drawerOpen = false;
+
+			function openDrawer() {
+				drawerOpen = true;
+				drawer.classList.add('open');
+				mainContent.classList.add('drawer-open');
+			}
+
+			function closeDrawer() {
+				drawerOpen = false;
+				drawer.classList.remove('open');
+				mainContent.classList.remove('drawer-open');
+			}
+
+			toggleBtn.addEventListener('click', () => {
+				if (drawerOpen) closeDrawer();
+				else openDrawer();
+			});
+
+			closeBtn.addEventListener('click', closeDrawer);
+
+			drawerToggle.addEventListener('click', () => {
+				drawerToggle.classList.toggle('on');
+			});
+
+			// Case study data
+			const projectData = [
+				{
+					meta: 'OPENAI X HARDWARE · CONCEPT 2025',
+					title: 'The future of AI & hardware',
+					gradient: 'linear-gradient(135deg, #f4a261 0%, #e88d9e 40%, #c7a0d4 70%, #b8b0e0 100%)',
+					heroTitle: 'OpenAI x Hardware',
+					role: 'Lead Product Designer',
+					timeline: 'August – September 2025',
+					team: '3 Designers',
+					skills: 'Product Design\nProduct Strategy\nPrototyping',
+					overview: 'What should OpenAI build as their first AI device?',
+					body: 'We explored the intersection of AI and hardware, designing a wearable device concept called "Tomo" that integrates with ChatGPT\'s Moments feature. The goal was to create a personal AI companion that captures and remembers everyday moments, making AI feel more human and present in daily life.'
+				},
+				{
+					meta: 'POKERGPT · SHIPPED 2023',
+					title: 'The world\'s first AI poker coach',
+					gradient: 'linear-gradient(160deg, #0a1628 0%, #152447 50%, #1a3060 100%)',
+					heroTitle: 'PokerGPT',
+					role: 'Product Designer + Engineer',
+					timeline: '2023',
+					team: '2 People',
+					skills: 'Product Design\nFull-Stack Dev\nAI/ML',
+					overview: 'How might we make poker strategy accessible to everyone?',
+					body: 'PokerGPT is the world\'s first AI poker coach, designed to help players of all levels improve their game. By combining GPT with poker strategy knowledge, we created an intuitive tool that analyzes hand histories and provides personalized coaching advice.'
+				},
+				{
+					meta: 'AMAZON ALEXA+ · CONTRACT 2025',
+					title: 'Novel consumer AI experiences',
+					gradient: 'linear-gradient(180deg, #0a1628 0%, #0d1f3d 40%, #1a3a6a 100%)',
+					heroTitle: '\'Alexa,',
+					role: 'Contract Product Designer',
+					timeline: '2025',
+					team: 'Amazon Team',
+					skills: 'Product Design\nVoice UI\nPrototyping',
+					overview: 'Reimagining voice-first AI interactions for the home.',
+					body: 'Worked with Amazon\'s Alexa+ team to design novel consumer AI experiences. Focused on making voice interactions feel more natural and contextual, pushing the boundaries of what a smart home assistant can do.'
+				},
+				{
+					meta: '1PASSWORD · SHIPPED 2025',
+					title: 'Bringing autofill to macOS',
+					gradient: 'linear-gradient(135deg, #0a1628 0%, #111d35 50%, #1a2d52 100%)',
+					heroTitle: '1Password',
+					role: 'Product Design Intern',
+					timeline: 'Summer 2025',
+					team: '1Password Team',
+					skills: 'Product Design\nmacOS Native\nPrototyping',
+					overview: 'How do we bring seamless autofill to macOS applications?',
+					body: 'During my internship at 1Password, I shipped a new autofill experience for macOS that makes credential management seamless across native applications. The feature uses system-level APIs to provide a consistent, secure autofill experience.'
+				},
+				{
+					meta: 'FIGMA · CONCEPT 2025',
+					title: 'Mobile-first for Figma',
+					gradient: 'linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%)',
+					heroTitle: 'Figma Mobile-First',
+					role: 'Product Designer',
+					timeline: '2025',
+					team: 'Solo',
+					skills: 'Product Design\nMobile Design\nPrototyping',
+					overview: 'Designing "Live Comments" for mobile-first design feedback.',
+					body: 'Designed a concept for Figma\'s mobile experience, introducing "Live Comments" – a feature enabling asynchronous design feedback with voice annotations. Won a design challenge in NYC.'
+				},
+				{
+					meta: 'SIDE PROJECT · 2024',
+					title: 'Making meditation accessible',
+					gradient: 'linear-gradient(135deg, #e8eaf6 0%, #c5cae9 50%, #9fa8da 100%)',
+					heroTitle: 'Meditation Trainer',
+					role: 'Designer + Developer',
+					timeline: '2024',
+					team: 'Solo',
+					skills: 'Web Dev\nUI Design\nAnimation',
+					overview: 'A simple, beautiful meditation timer for beginners.',
+					body: 'Built a meditation training app that makes mindfulness accessible. Features a hold-to-meditate interaction pattern and soothing visual feedback to guide breathing exercises.'
+				}
+			];
+
+			// Open case study
+			document.querySelectorAll('.view-btn, .project-card').forEach(el => {
+				el.addEventListener('click', (e) => {
+					e.preventDefault();
+					e.stopPropagation();
+
+					const idx = parseInt(el.dataset.projectIndex ?? el.closest('.project-card')?.dataset.projectIndex);
+					if (isNaN(idx)) return;
+					const data = projectData[idx];
+					if (!data) return;
+
+					const content = document.getElementById('case-study-content');
+					content.innerHTML = `
+						<div class="case-study-header-meta">${data.meta}</div>
+						<h1 class="case-study-title">${data.title}</h1>
+						<div class="case-study-hero" style="background: ${data.gradient};">
+							<span class="case-study-hero-title">${data.heroTitle}</span>
+						</div>
+						<div class="case-study-details">
+							<div><div class="detail-label">ROLE</div><div class="detail-value">${data.role}</div></div>
+							<div><div class="detail-label">TIMELINE</div><div class="detail-value">${data.timeline}</div></div>
+							<div><div class="detail-label">TEAM</div><div class="detail-value">${data.team}</div></div>
+							<div><div class="detail-label">SKILLS</div><div class="detail-value">${data.skills.replace(/\n/g, '<br>')}</div></div>
+						</div>
+						<div class="case-study-section">
+							<div class="case-study-section-label">OVERVIEW</div>
+							<h2>${data.overview}</h2>
+							<p>${data.body}</p>
+						</div>
+					`;
+
+					const overlay = document.getElementById('case-study-overlay');
+					overlay.style.display = 'flex';
+					requestAnimationFrame(() => overlay.classList.add('visible'));
+				});
+			});
+
+			// Close case study
+			document.getElementById('case-study-close').addEventListener('click', () => {
+				const overlay = document.getElementById('case-study-overlay');
+				overlay.classList.remove('visible');
+				setTimeout(() => { overlay.style.display = 'none'; }, 300);
+			});
+
+			document.getElementById('case-study-backdrop').addEventListener('click', () => {
+				const overlay = document.getElementById('case-study-overlay');
+				overlay.classList.remove('visible');
+				setTimeout(() => { overlay.style.display = 'none'; }, 300);
+			});
+
+			// Suggestion click simulated chat
+			document.querySelectorAll('.suggestion-item').forEach(item => {
+				item.addEventListener('click', () => {
+					const text = item.querySelector('span:last-child').textContent;
+					const input = document.querySelector('.drawer-input');
+					input.value = text;
+					input.focus();
+				});
+			});
+
+			// Sidebar nav active state
+			document.querySelectorAll('.case-study-nav li').forEach(li => {
+				li.addEventListener('click', () => {
+					document.querySelectorAll('.case-study-nav li').forEach(l => l.classList.remove('active'));
+					li.classList.add('active');
+				});
+			});
+		</script>
+	</body>
+</html>
