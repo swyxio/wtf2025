@@ -1,0 +1,1251 @@
+---
+const projects = [
+	{
+		id: "openai",
+		title: "OpenAI x Hardware",
+		subtitle: "The future of AI & hardware",
+		meta: "OPENAI X HARDWARE · CONCEPT 2025",
+		type: "case-study",
+		role: "Lead Product Designer",
+		timeline: "August – September 2025",
+		team: "3 Designers",
+		skills: "Product Design, Product Strategy, Prototyping",
+		overview: "What should OpenAI build as their first AI device?",
+		body: "We explored the intersection of AI and hardware, designing a wearable device concept called \"Tomo\" that integrates with ChatGPT's Moments feature to create a personal AI companion that captures and remembers everyday moments.",
+	},
+	{
+		id: "pokergpt",
+		title: "PokerGPT",
+		subtitle: "The world's first AI poker coach",
+		meta: "POKERGPT · SHIPPED 2023",
+		type: "case-study",
+		role: "Product Designer + Engineer",
+		timeline: "2023",
+		team: "2 People",
+		skills: "Product Design, Full-Stack Dev, AI/ML",
+		overview: "How might we make poker strategy accessible to everyone?",
+		body: "PokerGPT is the world's first AI poker coach, designed to help players of all levels improve their game through personalized coaching and hand analysis.",
+	},
+	{
+		id: "alexa",
+		title: "'Alexa,",
+		subtitle: "Novel consumer AI experiences",
+		meta: "AMAZON ALEXA+ · CONTRACT 2025",
+		type: "overview",
+		role: "Contract Product Designer",
+		timeline: "2025",
+		team: "Amazon Team",
+		skills: "Product Design, Voice UI, Prototyping",
+		overview: "Reimagining voice-first AI interactions for the home.",
+		body: "Worked with Amazon's Alexa+ team to design novel consumer AI experiences, making voice interactions feel more natural and contextual.",
+	},
+	{
+		id: "1password",
+		title: "1Password",
+		subtitle: "Bringing autofill to macOS",
+		meta: "1PASSWORD · SHIPPED 2025",
+		type: "case-study",
+		role: "Product Design Intern",
+		timeline: "Summer 2025",
+		team: "1Password Team",
+		skills: "Product Design, macOS Native, Prototyping",
+		overview: "How do we bring seamless autofill to macOS applications?",
+		body: "Shipped a new autofill experience for macOS that makes credential management seamless across native applications using system-level APIs.",
+	},
+	{
+		id: "figma",
+		title: "Figma",
+		subtitle: "Mobile-first for Figma",
+		meta: "FIGMA · CONCEPT 2025",
+		type: "case-study",
+		role: "Product Designer",
+		timeline: "2025",
+		team: "Solo",
+		skills: "Product Design, Mobile Design, Prototyping",
+		overview: 'Designing "Live Comments" for mobile-first design feedback.',
+		body: 'Designed a concept for Figma\'s mobile experience, introducing "Live Comments" – a feature enabling asynchronous design feedback with voice annotations. Won a design challenge in NYC.',
+	},
+	{
+		id: "earth",
+		title: "Google Earth",
+		subtitle: "Redesigning exploration",
+		meta: "GOOGLE EARTH · CONCEPT 2024",
+		type: "overview",
+		role: "Product Designer",
+		timeline: "2024",
+		team: "Solo",
+		skills: "Product Design, UX Research, Prototyping",
+		overview: "How might we make Earth exploration more engaging?",
+		body: "Redesigned the Google Earth exploration experience with a focus on storytelling and discovery, making geographic information more accessible and engaging.",
+	},
+];
+
+const experiences = [
+	{ year: "2025", company: "Bloomberg", role: "Software Engineering Intern" },
+	{ year: "2025", company: "1Password", role: "Product Design Intern" },
+	{ year: "2024", company: "Royal Bank of Canada", role: "Software Engineering Intern" },
+	{ year: "2023", company: "Onova", role: "Product Design + Engineering Intern" },
+];
+
+const funProjects = [
+	{ img: "/fun/visionary.png", title: "Eye tracking for everyone", meta: "TREEHACKS · HACKATHON" },
+	{ img: "/fun/bubbl.png", title: "Making hacking for everyone", meta: "HACK WESTERN 12 · HACKATHON" },
+	{ img: "/fun/empa.png", title: "Smart glasses prototype", meta: "INDUSTRIAL DESIGN · 2024" },
+	{ img: "/fun/asl.png", title: "Sign language translator", meta: "HACKATHON · 2023" },
+	{ img: "/fun/tldw.png", title: "TLDW – too long didn't watch", meta: "SIDE PROJECT · 2024" },
+	{ img: "/fun/dataquest.png", title: "DataQuest analytics", meta: "HACKATHON · 2023" },
+	{ img: "/fun/rachelai.png", title: "RachelAI assistant", meta: "SIDE PROJECT · 2024" },
+	{ img: "/fun/zensphere.png", title: "Meditation trainer", meta: "SIDE PROJECT · 2024" },
+];
+
+const chatSuggestions = [
+	"What projects have you worked on?",
+	"Tell me about your design process",
+	"What was your experience at 1Password?",
+];
+---
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/x-icon" href="/rc-favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Rachel Chen | Product Designer + Engineer</title>
+	<meta name="theme-color" content="#fafcfd" />
+	<style is:global>
+		@font-face {
+			font-family: 'Geist';
+			src: url('/fonts/geist-sans-latin.woff2') format('woff2');
+			font-weight: 100 900;
+			font-display: swap;
+		}
+		@font-face {
+			font-family: 'Geist Mono';
+			src: url('/fonts/geist-mono-latin.woff2') format('woff2');
+			font-weight: 100 900;
+			font-display: swap;
+		}
+		@font-face {
+			font-family: 'Crimson Pro';
+			src: url('/fonts/crimson-pro-latin.woff2') format('woff2');
+			font-weight: 200 900;
+			font-display: swap;
+		}
+		@font-face {
+			font-family: 'Crimson Pro';
+			src: url('/fonts/crimson-pro-italic-latin.woff2') format('woff2');
+			font-weight: 400;
+			font-style: italic;
+			font-display: swap;
+		}
+		@font-face {
+			font-family: 'tiemposText';
+			src: url('/fonts/tiempos-text.otf') format('opentype');
+			font-weight: 400;
+			font-display: swap;
+		}
+		@font-face {
+			font-family: 'tiemposText';
+			src: url('/fonts/tiempos-text-italic.otf') format('opentype');
+			font-weight: 400;
+			font-style: italic;
+			font-display: swap;
+		}
+
+		:root {
+			--primary: #e95a2c;
+			--foreground: #171717;
+			--muted: #a3a3a3;
+			--background: #fafcfd;
+			--border: rgba(23,23,23,0.1);
+			--font-sans: 'Geist', system-ui, sans-serif;
+			--font-mono: 'Geist Mono', monospace;
+			--font-serif: 'tiemposText', 'Crimson Pro', Georgia, serif;
+		}
+
+		* { margin: 0; padding: 0; box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			font-family: var(--font-sans);
+			background: var(--background);
+			color: var(--foreground);
+			-webkit-font-smoothing: antialiased;
+			overflow-x: hidden;
+		}
+		a { color: inherit; text-decoration: none; }
+		img { display: block; max-width: 100%; height: auto; }
+		button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+		/* ─── NAV ─── */
+		.nav {
+			display: flex;
+			justify-content: center;
+			padding: 0 24px;
+			height: 64px;
+			align-items: center;
+			border-bottom: 1px solid var(--border);
+			position: sticky;
+			top: 0;
+			background: var(--background);
+			z-index: 100;
+		}
+		.nav-inner {
+			max-width: 1800px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			gap: 24px;
+		}
+		.nav-logo {
+			display: flex;
+			gap: 16px;
+			align-items: baseline;
+			flex-shrink: 0;
+		}
+		.nav-logo-name {
+			font-family: var(--font-sans);
+			font-size: 15px;
+			font-weight: 500;
+			color: var(--foreground);
+			white-space: nowrap;
+		}
+		.nav-logo-role {
+			font-family: var(--font-sans);
+			font-size: 15px;
+			color: var(--muted);
+			white-space: nowrap;
+			display: flex;
+			align-items: center;
+			gap: 0;
+		}
+		.nav-links {
+			display: flex;
+			gap: 32px;
+			align-items: center;
+			margin-left: auto;
+		}
+		h4 { font-size: 15px; font-weight: 400; }
+		.nav-link {
+			font-family: var(--font-sans);
+			font-size: 15px;
+			color: var(--muted);
+			cursor: pointer;
+			transition: color 0.2s;
+			white-space: nowrap;
+		}
+		.nav-link:hover { color: var(--primary); }
+		.nav-link.active { color: var(--primary); }
+		.rachellm-btn {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			font-family: var(--font-mono);
+			font-size: 15px;
+			color: var(--muted);
+			opacity: 0.5;
+			transition: opacity 0.2s, color 0.2s;
+			cursor: pointer;
+			padding: 8px;
+			border-radius: 999px;
+			margin-right: -8px;
+		}
+		.rachellm-btn:hover { opacity: 1; color: var(--primary); }
+		.rachellm-btn svg { flex-shrink: 0; }
+		.rachellm-label { text-transform: uppercase; font-size: 15px; }
+
+		/* ─── LAYOUT ─── */
+		.layout {
+			display: flex;
+			height: calc(100dvh - 64px);
+			overflow: hidden;
+		}
+		.main-scroll {
+			flex: 1;
+			overflow-y: auto;
+			transition: all 0.2s ease-in-out;
+		}
+		.page-content {
+			display: none;
+		}
+		.page-content.active {
+			display: block;
+		}
+
+		/* ─── WORK HERO ─── */
+		.work-hero {
+			display: flex;
+			padding: 0 24px;
+			gap: 24px;
+			max-width: 1800px;
+			margin: 0 auto;
+			align-items: flex-start;
+			padding-top: 64px;
+			padding-bottom: 48px;
+		}
+		.hero-left {
+			flex: 1;
+			max-width: 480px;
+		}
+		.hero-title {
+			font-family: var(--font-serif);
+			font-size: clamp(32px, 3.5vw, 44px);
+			font-weight: 400;
+			line-height: 1.2;
+			color: var(--foreground);
+			letter-spacing: -0.01em;
+		}
+		.hero-title em {
+			font-family: 'Crimson Pro', Georgia, serif;
+			font-style: italic;
+		}
+		.hero-right {
+			flex: 1;
+			padding-top: 12px;
+		}
+		.exp-row {
+			display: grid;
+			grid-template-columns: 48px 1fr 1fr;
+			gap: 12px;
+			padding: 6px 0;
+			font-size: 15px;
+			line-height: 1.5;
+		}
+		.exp-year { color: var(--muted); }
+		.exp-company { color: var(--foreground); font-weight: 500; }
+		.exp-role { color: var(--muted); }
+
+		/* ─── PROJECT GRID ─── */
+		.project-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 12px;
+			padding: 0 24px 80px;
+			max-width: 1800px;
+			margin: 0 auto;
+		}
+		.project-card {
+			position: relative;
+			border-radius: 12px;
+			overflow: hidden;
+			cursor: pointer;
+			border: 1px solid var(--border);
+			transition: transform 0.2s, box-shadow 0.2s;
+		}
+		.project-card:hover {
+			box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+		}
+		.card-visual {
+			position: relative;
+			aspect-ratio: 8/5;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.card-bg {
+			position: absolute;
+			inset: 0;
+		}
+		.card-title-overlay {
+			position: relative;
+			z-index: 1;
+			font-family: var(--font-serif);
+			font-size: clamp(20px, 2vw, 28px);
+			font-weight: 400;
+			color: #fff;
+			text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+			padding: 24px;
+			align-self: flex-end;
+			width: 100%;
+		}
+		.card-title-dark {
+			color: var(--foreground);
+			text-shadow: none;
+		}
+
+		/* Hover overlay */
+		.card-hover-overlay {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0;
+			z-index: 2;
+			transition: opacity 0.25s;
+		}
+		.project-card:hover .card-hover-overlay { opacity: 1; }
+		.view-btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			padding: 8px 16px;
+			background: var(--primary);
+			color: #fff;
+			border-radius: 999px;
+			font-family: var(--font-mono);
+			font-size: 12px;
+			font-weight: 500;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			transform: translateY(4px);
+			transition: transform 0.25s;
+		}
+		.project-card:hover .view-btn { transform: translateY(0); }
+
+		/* Card meta */
+		.card-meta {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+			padding: 10px 4px 0;
+			gap: 8px;
+		}
+		.card-subtitle {
+			font-size: 15px;
+			color: var(--foreground);
+		}
+		.card-info {
+			font-family: var(--font-mono);
+			font-size: 12px;
+			color: var(--muted);
+			letter-spacing: 0.02em;
+			white-space: nowrap;
+			flex-shrink: 0;
+		}
+
+		/* ─── OpenAI gradient ─── */
+		.grad-openai { background: linear-gradient(135deg, #f0a05a 0%, #e8937a 25%, #d9919e 50%, #c49cc8 75%, #b5a5d8 100%); }
+		.grad-poker { background: linear-gradient(160deg, #101c33 0%, #152447 50%, #1a3060 100%); }
+		.grad-alexa { background: linear-gradient(180deg, #0b1525 0%, #0e1e3a 50%, #142d55 100%); }
+		.grad-1pw { background: linear-gradient(135deg, #0c1628 0%, #111d35 50%, #1a2d52 100%); }
+		.grad-figma { background: linear-gradient(135deg, #fde4ea 0%, #f5c0d0 50%, #f09db5 100%); }
+		.grad-earth { background: linear-gradient(135deg, #e8e8ee 0%, #d8d8e5 50%, #c5c5db 100%); }
+
+		/* ─── Mockup components inside cards ─── */
+		.mockup-container { position: relative; z-index: 1; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+
+		/* PokerGPT: chat form */
+		.poker-mockup {
+			width: 280px;
+			background: #fff;
+			border-radius: 16px;
+			padding: 20px;
+			box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+			font-size: 13px;
+			color: #333;
+		}
+		.poker-mockup-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 16px;
+		}
+		.poker-mockup-header span { color: #666; }
+		.poker-template-btn {
+			font-size: 11px;
+			color: var(--primary);
+			border: 1px solid var(--primary);
+			border-radius: 6px;
+			padding: 4px 10px;
+			background: #fff;
+		}
+		.poker-field {
+			font-size: 12px;
+			line-height: 1.8;
+			color: #555;
+		}
+		.poker-field .placeholder { color: var(--primary); }
+		.poker-villain { margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; color: #999; font-size: 12px; }
+		.poker-send { text-align: right; margin-top: 8px; color: #ccc; }
+		.poker-send svg { display: inline-block; }
+
+		/* Alexa: wave + text */
+		.alexa-content {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			padding: 24px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			height: 100%;
+		}
+		.alexa-wave {
+			width: 100%;
+			height: 80px;
+			margin-bottom: 24px;
+		}
+		.alexa-wave svg { width: 100%; height: 100%; }
+		.alexa-text {
+			font-family: var(--font-serif);
+			font-size: 22px;
+			line-height: 1.3;
+		}
+		.alexa-text .cyan { color: #38bdf8; }
+		.alexa-text .white { color: rgba(255,255,255,0.7); }
+
+		/* 1Password: login form */
+		.pw-mockup {
+			width: 260px;
+			background: #fff;
+			border-radius: 16px;
+			padding: 20px;
+			box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+		}
+		.pw-label { font-size: 13px; color: #555; margin-bottom: 6px; }
+		.pw-field {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			padding: 10px 12px;
+			background: #f8f8f8;
+			border-radius: 10px;
+			margin-bottom: 14px;
+			font-size: 13px;
+			color: #333;
+		}
+		.pw-icon {
+			width: 22px; height: 22px;
+			background: #0066ff;
+			border-radius: 50%;
+			margin-left: auto;
+			flex-shrink: 0;
+		}
+		.pw-btn {
+			width: 100%;
+			padding: 11px;
+			background: #0066ff;
+			color: #fff;
+			border-radius: 10px;
+			font-size: 13px;
+			font-weight: 500;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+		}
+
+		/* ─── RACHELLM DRAWER ─── */
+		.drawer {
+			width: 0;
+			overflow: hidden;
+			border-left: 0px solid var(--border);
+			transition: width 0.3s ease, border-left-width 0.3s ease;
+			display: flex;
+			flex-direction: column;
+			flex-shrink: 0;
+			background: var(--background);
+		}
+		.drawer.open {
+			width: 360px;
+			border-left-width: 1px;
+		}
+		.drawer-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 14px 20px;
+			border-bottom: 1px solid var(--border);
+			min-height: 56px;
+			gap: 8px;
+		}
+		.drawer-title {
+			font-family: var(--font-mono);
+			font-size: 14px;
+			font-weight: 500;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			white-space: nowrap;
+		}
+		.drawer-info {
+			width: 16px; height: 16px;
+			border-radius: 50%;
+			border: 1.5px solid var(--muted);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 10px;
+			color: var(--muted);
+		}
+		.drawer-actions { display: flex; gap: 10px; align-items: center; }
+		.toggle {
+			width: 36px; height: 20px;
+			background: #ddd;
+			border-radius: 10px;
+			position: relative;
+			cursor: pointer;
+			transition: background 0.2s;
+		}
+		.toggle.on { background: var(--primary); }
+		.toggle::after {
+			content: '';
+			position: absolute;
+			top: 2px; left: 2px;
+			width: 16px; height: 16px;
+			background: #fff;
+			border-radius: 50%;
+			transition: transform 0.2s;
+		}
+		.toggle.on::after { transform: translateX(16px); }
+		.close-btn {
+			width: 28px; height: 28px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 18px;
+			color: var(--muted);
+			border-radius: 6px;
+			transition: background 0.2s, color 0.2s;
+		}
+		.close-btn:hover { background: #f0f0f0; color: var(--foreground); }
+		.drawer-body {
+			flex: 1;
+			overflow-y: auto;
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+		}
+		.drawer-suggestions { margin-top: auto; }
+		.drawer-suggestions h3 {
+			font-size: 16px;
+			font-weight: 500;
+			margin-bottom: 14px;
+		}
+		.suggestion {
+			display: flex;
+			gap: 10px;
+			padding: 8px 0;
+			cursor: pointer;
+			color: var(--muted);
+			font-size: 14px;
+			transition: color 0.2s;
+		}
+		.suggestion:hover { color: var(--foreground); }
+		.suggestion .arrow { color: var(--primary); flex-shrink: 0; }
+		.drawer-input-wrap {
+			padding: 14px 20px;
+			border-top: 1px solid var(--border);
+		}
+		.drawer-input-box {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			padding: 10px 14px;
+			border: 1px solid #e0e0e0;
+			border-radius: 10px;
+			transition: border-color 0.2s;
+		}
+		.drawer-input-box:focus-within { border-color: var(--primary); }
+		.drawer-input-box input {
+			flex: 1;
+			border: none;
+			outline: none;
+			font-family: var(--font-sans);
+			font-size: 14px;
+			background: transparent;
+			color: var(--foreground);
+		}
+		.drawer-input-box input::placeholder { color: #bbb; }
+		.send-btn { color: #ccc; display: flex; transition: color 0.2s; }
+		.send-btn:hover { color: var(--primary); }
+
+		/* ─── ABOUT ─── */
+		.about-wrap {
+			display: flex;
+			flex-direction: column;
+			padding: 0 24px;
+			gap: 12px;
+			max-width: 1800px;
+			margin: 0 auto;
+			padding-top: 48px;
+		}
+		.about-top {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 24px;
+		}
+		.about-title {
+			font-family: var(--font-serif);
+			font-size: clamp(32px, 3.5vw, 44px);
+			font-weight: 400;
+			line-height: 1.2;
+			max-width: 500px;
+		}
+		.about-body {
+			font-size: 15px;
+			line-height: 1.7;
+			color: #555;
+			max-width: 500px;
+		}
+		.about-body p { margin-bottom: 12px; }
+		.about-body a { color: var(--foreground); font-weight: 600; border-bottom: 1px solid var(--foreground); }
+		.about-body ul { list-style: disc; padding-left: 20px; margin-bottom: 12px; }
+		.about-body li { padding: 2px 0; }
+		.about-photos {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 6px;
+			padding: 48px 0 80px;
+		}
+		@media (min-width: 768px) {
+			.about-photos { grid-template-columns: repeat(6, 1fr); }
+		}
+		.about-photo {
+			aspect-ratio: 1;
+			border-radius: 10px;
+			overflow: hidden;
+			border: 1px solid var(--border);
+		}
+		.about-photo img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		/* ─── FUN ─── */
+		.fun-wrap {
+			padding: 48px 24px 80px;
+			max-width: 1800px;
+			margin: 0 auto;
+		}
+		.fun-title {
+			font-family: var(--font-serif);
+			font-size: clamp(32px, 3.5vw, 44px);
+			font-weight: 400;
+			line-height: 1.2;
+			max-width: 600px;
+			margin-bottom: 12px;
+		}
+		.fun-subtitle {
+			font-size: 15px;
+			color: #555;
+			line-height: 1.7;
+			max-width: 500px;
+			margin-bottom: 36px;
+		}
+		.fun-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 16px;
+		}
+		.fun-card {
+			border-radius: 12px;
+			overflow: hidden;
+			cursor: pointer;
+			transition: transform 0.2s, box-shadow 0.2s;
+			border: 1px solid var(--border);
+		}
+		.fun-card:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+		}
+		.fun-card-img {
+			aspect-ratio: 10/7;
+			overflow: hidden;
+			background: #f5f5f5;
+		}
+		.fun-card-img img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		.fun-card-meta {
+			padding: 10px 4px 0;
+		}
+		.fun-card-title {
+			font-size: 15px;
+			color: var(--foreground);
+		}
+		.fun-card-info {
+			font-family: var(--font-mono);
+			font-size: 12px;
+			color: var(--muted);
+			letter-spacing: 0.02em;
+			margin-top: 2px;
+		}
+
+		/* ─── CASE STUDY ─── */
+		.cs-overlay {
+			position: fixed;
+			inset: 0;
+			z-index: 200;
+			display: flex;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.3s;
+		}
+		.cs-overlay.visible { opacity: 1; pointer-events: auto; }
+		.cs-backdrop {
+			position: absolute;
+			inset: 0;
+			background: rgba(0,0,0,0.25);
+			backdrop-filter: blur(2px);
+		}
+		.cs-panel {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background: var(--background);
+			display: flex;
+			overflow: hidden;
+			transform: translateY(12px);
+			transition: transform 0.3s ease;
+		}
+		.cs-overlay.visible .cs-panel { transform: translateY(0); }
+		.cs-sidebar {
+			width: 200px;
+			padding: 28px 20px;
+			border-right: 1px solid var(--border);
+			flex-shrink: 0;
+		}
+		.cs-back {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			font-size: 14px;
+			font-weight: 500;
+			cursor: pointer;
+			margin-bottom: 28px;
+			transition: color 0.2s;
+		}
+		.cs-back:hover { color: var(--primary); }
+		.cs-nav { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+		.cs-nav li {
+			font-size: 13px;
+			color: var(--muted);
+			cursor: pointer;
+			padding: 3px 0;
+			transition: color 0.2s;
+		}
+		.cs-nav li:hover { color: var(--foreground); }
+		.cs-nav li.active { color: var(--foreground); font-weight: 500; }
+		.cs-body {
+			flex: 1;
+			overflow-y: auto;
+			padding: 36px 48px;
+		}
+		.cs-meta-label {
+			font-family: var(--font-mono);
+			font-size: 12px;
+			color: var(--muted);
+			letter-spacing: 0.03em;
+			margin-bottom: 10px;
+		}
+		.cs-heading {
+			font-family: var(--font-serif);
+			font-size: 36px;
+			font-weight: 400;
+			line-height: 1.2;
+			margin-bottom: 28px;
+		}
+		.cs-hero {
+			width: 100%;
+			aspect-ratio: 16/7;
+			border-radius: 14px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 32px;
+		}
+		.cs-hero-title {
+			font-family: var(--font-serif);
+			font-size: 30px;
+			color: #fff;
+			text-shadow: 0 1px 6px rgba(0,0,0,0.12);
+		}
+		.cs-details {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 20px;
+			padding-bottom: 32px;
+			margin-bottom: 40px;
+			border-bottom: 1px solid var(--border);
+		}
+		.cs-detail-label {
+			font-family: var(--font-mono);
+			font-size: 11px;
+			color: var(--muted);
+			letter-spacing: 0.04em;
+			margin-bottom: 6px;
+		}
+		.cs-detail-value {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		.cs-section { margin-bottom: 40px; }
+		.cs-section h2 {
+			font-family: var(--font-serif);
+			font-size: 26px;
+			font-weight: 400;
+			line-height: 1.3;
+			margin-bottom: 12px;
+		}
+		.cs-section p {
+			font-size: 15px;
+			color: #666;
+			line-height: 1.7;
+			max-width: 580px;
+		}
+
+		/* ─── RESPONSIVE ─── */
+		@media (max-width: 1024px) {
+			.work-hero { flex-direction: column; padding-top: 40px; gap: 24px; }
+			.hero-left { max-width: 100%; }
+		}
+		@media (max-width: 768px) {
+			.nav-inner { flex-wrap: wrap; }
+			.project-grid { grid-template-columns: 1fr; }
+			.fun-grid { grid-template-columns: 1fr; }
+			.about-top { grid-template-columns: 1fr; }
+			.drawer.open { width: 100%; position: fixed; inset: 0; z-index: 200; }
+			.cs-sidebar { display: none; }
+			.cs-body { padding: 20px; }
+			.cs-details { grid-template-columns: 1fr 1fr; }
+		}
+	</style>
+</head>
+<body>
+
+	<!-- NAV -->
+	<nav class="nav">
+		<div class="nav-inner">
+			<a class="nav-logo" href="/social-post">
+				<span class="nav-logo-name">Rachel Chen</span>
+				<span class="nav-logo-role">Product Designer + Engineer</span>
+			</a>
+			<div class="nav-links">
+				<a class="nav-link active" data-page="work">Work</a>
+				<a class="nav-link" data-page="fun">Fun</a>
+				<a class="nav-link" data-page="about">About</a>
+				<a class="nav-link" data-page="resume" href="/Rachel_Chen_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+			</div>
+			<button class="rachellm-btn" id="rachellm-toggle" aria-label="Open AI chat">
+				<svg width="16" height="16" viewBox="0 0 30 30" fill="none"><path d="M14.5231 29.2759C12.6685 22.5706 7.42938 17.3315 0.724097 15.4769C0.240255 15.3431 0.240255 14.657 0.724097 14.5231C7.42938 12.6685 12.6685 7.42939 14.5231 0.724099C14.6569 0.240257 15.343 0.240257 15.4769 0.724099C17.3315 7.42939 22.5706 12.6685 29.2759 14.5231C29.7597 14.657 29.7597 15.343 29.2759 15.4769C22.5706 17.3315 17.3315 22.5706 15.4769 29.2759C15.343 29.7597 14.657 29.7597 14.5231 29.2759Z" fill="currentColor"></path></svg>
+				<span class="rachellm-label">RacheLLM</span>
+			</button>
+		</div>
+	</nav>
+
+	<!-- MAIN LAYOUT -->
+	<div class="layout">
+		<div class="main-scroll" id="main-scroll">
+
+			<!-- WORK -->
+			<div class="page-content active" id="page-work">
+				<div class="work-hero">
+					<div class="hero-left">
+						<h1 class="hero-title">I'm Rachel, a product designer who <em>engineers.</em></h1>
+					</div>
+					<div class="hero-right">
+						{experiences.map(e => (
+							<div class="exp-row">
+								<span class="exp-year">{e.year}</span>
+								<span class="exp-company">{e.company}</span>
+								<span class="exp-role">{e.role}</span>
+							</div>
+						))}
+					</div>
+				</div>
+
+				<div class="project-grid">
+					<!-- OpenAI x Hardware -->
+					<div class="project-card" data-idx="0">
+						<div class="card-visual">
+							<div class="card-bg grad-openai"></div>
+							<div class="card-title-overlay">OpenAI x Hardware</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW CASE STUDY →</span></div>
+						</div>
+						<div class="card-meta">
+							<span class="card-subtitle">The future of AI & hardware</span>
+							<span class="card-info">OPENAI X HARDWARE · CONCEPT 2025</span>
+						</div>
+					</div>
+
+					<!-- PokerGPT -->
+					<div class="project-card" data-idx="1">
+						<div class="card-visual">
+							<div class="card-bg grad-poker"></div>
+							<div class="mockup-container">
+								<div class="poker-mockup">
+									<div class="poker-mockup-header">
+										<span>Start by writing your hand history.</span>
+										<span class="poker-template-btn">Use Hand History Template</span>
+									</div>
+									<div class="poker-field">
+										Pre-flop action: UTG open, I call in SB<br/>
+										Flop: <span class="placeholder">[ Enter the flop e.g. KcQhTd ]</span><br/>
+										Flop action: <span class="placeholder">[ Action including bet sizes in BB ]</span><br/>
+										Turn: <span class="placeholder">[ e.g. 5d ]</span><br/>
+										Turn action: <span class="placeholder">[ Action including bet sizes in BB ]</span>
+									</div>
+									<div class="poker-villain">Villain player type: <span class="placeholder">[ eg. Tight Aggressive Recreational]</span></div>
+									<div class="poker-send"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M14 2L7 9M14 2L9.5 14L7 9M14 2L2 6.5L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+								</div>
+							</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW CASE STUDY →</span></div>
+						</div>
+						<div class="card-meta">
+							<span class="card-subtitle">The world's first AI poker coach</span>
+							<span class="card-info">POKERGPT · SHIPPED 2023</span>
+						</div>
+					</div>
+
+					<!-- Alexa -->
+					<div class="project-card" data-idx="2">
+						<div class="card-visual">
+							<div class="card-bg grad-alexa"></div>
+							<div class="alexa-content">
+								<div class="alexa-wave">
+									<svg viewBox="0 0 600 80" preserveAspectRatio="none">
+										<defs><linearGradient id="wg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1e3a5f"/><stop offset="0.3" stop-color="#38bdf8"/><stop offset="0.5" stop-color="#7dd3fc"/><stop offset="0.7" stop-color="#38bdf8"/><stop offset="1" stop-color="#1e3a5f"/></linearGradient></defs>
+										<path d="M0,40 C50,20 100,60 150,40 S250,20 300,40 S400,60 450,40 S550,20 600,40" fill="none" stroke="url(#wg)" stroke-width="2.5" opacity="0.8"/>
+										<path d="M0,40 C50,30 100,50 150,40 S250,30 300,40 S400,50 450,40 S550,30 600,40" fill="none" stroke="url(#wg)" stroke-width="1.5" opacity="0.5"/>
+										<path d="M0,40 C50,35 100,45 150,40 S250,35 300,40 S400,45 450,40 S550,35 600,40" fill="none" stroke="url(#wg)" stroke-width="1" opacity="0.3"/>
+									</svg>
+								</div>
+								<div class="alexa-text">
+									<span class="cyan">'Alexa,</span> <span class="white">get me a recipe for crab benedict'</span>
+								</div>
+							</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW OVERVIEW →</span></div>
+						</div>
+						<div class="card-meta">
+							<span class="card-subtitle">Novel consumer AI experiences</span>
+							<span class="card-info">AMAZON ALEXA+ · CONTRACT 2025</span>
+						</div>
+					</div>
+
+					<!-- 1Password -->
+					<div class="project-card" data-idx="3">
+						<div class="card-visual">
+							<div class="card-bg grad-1pw"></div>
+							<div class="mockup-container">
+								<div class="pw-mockup">
+									<div class="pw-label">Username</div>
+									<div class="pw-field">jeff@1password.com <div class="pw-icon"></div></div>
+									<div class="pw-btn">
+										<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="#fff" stroke-width="2"/></svg>
+										Sign in with passkey
+									</div>
+								</div>
+							</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW CASE STUDY →</span></div>
+						</div>
+						<div class="card-meta">
+							<span class="card-subtitle">Bringing autofill to macOS</span>
+							<span class="card-info">1PASSWORD · SHIPPED 2025</span>
+						</div>
+					</div>
+
+					<!-- Figma -->
+					<div class="project-card" data-idx="4">
+						<div class="card-visual">
+							<div class="card-bg grad-figma"></div>
+							<div class="card-title-overlay card-title-dark">Figma</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW CASE STUDY →</span></div>
+						</div>
+						<div class="card-meta">
+							<span class="card-subtitle">Mobile-first for Figma</span>
+							<span class="card-info">FIGMA · CONCEPT 2025</span>
+						</div>
+					</div>
+
+					<!-- Google Earth -->
+					<div class="project-card" data-idx="5">
+						<div class="card-visual">
+							<div class="card-bg grad-earth"></div>
+							<div class="card-title-overlay card-title-dark">Google Earth</div>
+							<div class="card-hover-overlay"><span class="view-btn">⊕ VIEW OVERVIEW →</span></div>
+						</div>
+						<div class="card-meta">
+							<span class="card-subtitle">Redesigning exploration</span>
+							<span class="card-info">GOOGLE EARTH · CONCEPT 2024</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- FUN -->
+			<div class="page-content" id="page-fun">
+				<div class="fun-wrap">
+					<h1 class="fun-title">I lose sleep to hackathons, design sprints, & silly little side quests.</h1>
+					<p class="fun-subtitle">Design is my passion, but I make time to code cool things and artificialize intelligence. Currently building design communities and tinkering with chrome extensions.</p>
+					<div class="fun-grid">
+						{funProjects.map(p => (
+							<div class="fun-card">
+								<div class="fun-card-img"><img src={p.img} alt={p.title} loading="lazy" /></div>
+								<div class="fun-card-meta">
+									<div class="fun-card-title">{p.title}</div>
+									<div class="fun-card-info">{p.meta}</div>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<!-- ABOUT -->
+			<div class="page-content" id="page-about">
+				<div class="about-wrap">
+					<div class="about-top">
+						<div>
+							<h1 class="about-title">I'm a designer, builder, & dancer—always seeking new adventures.</h1>
+						</div>
+						<div></div>
+					</div>
+					<div class="about-body">
+						<p>I think deeply about people, products, and the future of technology. Currently rabbit-holing into the world of human-AI interaction.</p>
+						<p>Open to contract and freelance opportunities. If you're working on something cool, <a href="#">let's chat!</a></p>
+						<p>Outside of design, engineering, and being a comp sci + business student, I'm:</p>
+						<ul>
+							<li>leading student clubs in the tech space</li>
+							<li>searching for food</li>
+							<li>flashing V4's</li>
+							<li>dancing, dancing, & dancing</li>
+						</ul>
+						<p>To befriend me or hire me, reach out on <a href="#">LinkedIn</a>, <a href="#">X</a>, or by <a href="#">email</a>—can't wait to meet you!</p>
+					</div>
+					<div class="about-photos">
+						<div class="about-photo"><img src="/about/about1.jpg" alt="About image 1" loading="lazy" /></div>
+						<div class="about-photo"><img src="/about/about2.jpg" alt="About image 2" loading="lazy" /></div>
+						<div class="about-photo"><img src="/about/about3.jpg" alt="About image 3" loading="lazy" /></div>
+						<div class="about-photo"><img src="/about/about4.jpg" alt="About image 4" loading="lazy" /></div>
+						<div class="about-photo"><img src="/about/about5.jpg" alt="About image 5" loading="lazy" /></div>
+						<div class="about-photo"><img src="/about/about6.jpg" alt="About image 6" loading="lazy" /></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- RACHELLM DRAWER -->
+		<div class="drawer" id="drawer">
+			<div class="drawer-header">
+				<div class="drawer-title">RACHELLM <span class="drawer-info">i</span></div>
+				<div class="drawer-actions">
+					<div class="toggle on" id="drawer-toggle"></div>
+					<button class="close-btn" id="drawer-close">×</button>
+				</div>
+			</div>
+			<div class="drawer-body">
+				<div class="drawer-suggestions">
+					<h3>What would you like to know?</h3>
+					{chatSuggestions.map(s => (
+						<div class="suggestion"><span class="arrow">↙</span><span>{s}</span></div>
+					))}
+				</div>
+			</div>
+			<div class="drawer-input-wrap">
+				<div class="drawer-input-box">
+					<input type="text" placeholder="Ask about Rachel..." />
+					<button class="send-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M14 2L7 9M14 2L9.5 14L7 9M14 2L2 6.5L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- CASE STUDY OVERLAY -->
+	<div class="cs-overlay" id="cs-overlay">
+		<div class="cs-backdrop" id="cs-backdrop"></div>
+		<div class="cs-panel">
+			<div class="cs-sidebar">
+				<a class="cs-back" id="cs-close">← BACK</a>
+				<ul class="cs-nav">
+					<li class="active">Overview</li>
+					<li>Solution</li>
+					<li>Core Flows</li>
+					<li>Research</li>
+					<li>Exploring Form Factors</li>
+					<li>Prototyping and Testing</li>
+					<li>Design Decisions</li>
+					<li>Reflection</li>
+				</ul>
+			</div>
+			<div class="cs-body" id="cs-body"></div>
+		</div>
+	</div>
+
+	<script define:vars={{ projects: JSON.stringify(projects) }}>
+		const projectData = JSON.parse(projects);
+		const grads = ['grad-openai','grad-poker','grad-alexa','grad-1pw','grad-figma','grad-earth'];
+
+		// Nav
+		document.querySelectorAll('.nav-link[data-page]').forEach(l => {
+			l.addEventListener('click', e => {
+				const page = l.dataset.page;
+				if (page === 'resume') return;
+				e.preventDefault();
+				document.querySelectorAll('.nav-link[data-page]').forEach(x => x.classList.remove('active'));
+				l.classList.add('active');
+				document.querySelectorAll('.page-content').forEach(s => s.classList.remove('active'));
+				document.getElementById('page-' + page)?.classList.add('active');
+				document.getElementById('main-scroll').scrollTop = 0;
+			});
+		});
+
+		// Drawer
+		const drawer = document.getElementById('drawer');
+		let drawerOpen = false;
+		document.getElementById('rachellm-toggle').addEventListener('click', () => {
+			drawerOpen = !drawerOpen;
+			drawer.classList.toggle('open', drawerOpen);
+		});
+		document.getElementById('drawer-close').addEventListener('click', () => {
+			drawerOpen = false;
+			drawer.classList.remove('open');
+		});
+		document.getElementById('drawer-toggle').addEventListener('click', function() {
+			this.classList.toggle('on');
+		});
+
+		// Case study
+		function openCS(idx) {
+			const d = projectData[idx];
+			if (!d) return;
+			document.getElementById('cs-body').innerHTML = `
+				<div class="cs-meta-label">${d.meta}</div>
+				<h1 class="cs-heading">${d.subtitle}</h1>
+				<div class="cs-hero ${grads[idx]}"><span class="cs-hero-title">${d.title}</span></div>
+				<div class="cs-details">
+					<div><div class="cs-detail-label">ROLE</div><div class="cs-detail-value">${d.role}</div></div>
+					<div><div class="cs-detail-label">TIMELINE</div><div class="cs-detail-value">${d.timeline}</div></div>
+					<div><div class="cs-detail-label">TEAM</div><div class="cs-detail-value">${d.team}</div></div>
+					<div><div class="cs-detail-label">SKILLS</div><div class="cs-detail-value">${d.skills}</div></div>
+				</div>
+				<div class="cs-section">
+					<div class="cs-meta-label">OVERVIEW</div>
+					<h2>${d.overview}</h2>
+					<p>${d.body}</p>
+				</div>`;
+			document.getElementById('cs-overlay').classList.add('visible');
+		}
+		function closeCS() { document.getElementById('cs-overlay').classList.remove('visible'); }
+
+		document.querySelectorAll('.project-card').forEach(c => {
+			c.addEventListener('click', () => openCS(parseInt(c.dataset.idx)));
+		});
+		document.getElementById('cs-close').addEventListener('click', closeCS);
+		document.getElementById('cs-backdrop').addEventListener('click', closeCS);
+		document.addEventListener('keydown', e => {
+			if (e.key === 'Escape') { closeCS(); if (drawerOpen) { drawerOpen = false; drawer.classList.remove('open'); } }
+		});
+
+		// Sidebar nav active
+		document.querySelectorAll('.cs-nav li').forEach(li => {
+			li.addEventListener('click', () => {
+				document.querySelectorAll('.cs-nav li').forEach(x => x.classList.remove('active'));
+				li.classList.add('active');
+			});
+		});
+
+		// Chat suggestion click
+		document.querySelectorAll('.suggestion').forEach(s => {
+			s.addEventListener('click', () => {
+				document.querySelector('.drawer-input-box input').value = s.querySelector('span:last-child').textContent;
+			});
+		});
+	</script>
+</body>
+</html>
